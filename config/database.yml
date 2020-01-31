@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: development-uf
+  pool: 5
+  username:
+  password:
+  timeout: 5000
+
+
+development:
+  <<: *default
+  database: development-uf-v1
+
+test:
+  <<: *default
+  database: test-uf-v1
+
+production:
+  <<: *default
+  database: production-uf-v1
