@@ -19,7 +19,7 @@ class SessionManager extends Component {
                     <h1>
                         Signed In
                     </h1>
-                    <button onClick={this.handleLogOut}> log-out </button>
+                    <button onClick={this.handleLogOut} className={'button is-large is-primary'}> log-out </button>
                 </div>
             )
         } else return (

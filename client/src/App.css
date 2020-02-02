@@ -1,38 +1,92 @@
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* RESET END */
+/* BULMA END */
 .App {
   text-align: center;
-}
+  font-family: 'Helvetica Neue', sans-serif; }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.content-spacer {
+  width: 100%;
+  height: 20px; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.standard-button {
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  color: #F7F7F7;
+  background-color: #373737;
+  border-radius: 3px;
+  padding: 7px 10px;
+  margin: 10px;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07); }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.standard-button:hover {
+  color: #a6a6a6;
+  background-color: #3c3c3c; }
 
-.App-link {
-  color: #61dafb;
-}
+@media screen and (min-width: 1025px) {
+  .navbar-item.is-hoverable:hover .navbar-dropdown {
+    display: block !important; }
+  .navbar-item.is-hoverable:focus-within .navbar-dropdown {
+    display: none; } }
 
-@keyframes App-logo-spin {
+.select.is-charcoal:after {
+  border-color: #373737 !important; }
+
+.uf-fade-in {
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  /* Firefox */
+  -webkit-animation: fadein 1s;
+  /* Safari and Chrome */
+  -o-animation: fadein 1s;
+  /* Opera */ }
+
+@keyframes fadein {
   from {
-    transform: rotate(0deg);
-  }
+    opacity: 0; }
   to {
-    transform: rotate(360deg);
-  }
-}
+    opacity: 1; } }
+
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }

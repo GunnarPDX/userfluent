@@ -1,0 +1,345 @@
+.nav-color-strip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    z-index: 999;
+    //background: rgb(237,171,109);
+    //background: linear-gradient(90deg, rgba(237,171,109,1) 0%, rgba(177,86,88,1) 100%);
+
+    background: rgb(237,171,109);
+    background: linear-gradient(90deg, rgba(237,171,109,1) 0%, rgba(207,70,73,1) 100%);
+}
+
+.uf-main-logo {
+    margin-top: 8px;
+    margin-bottom: 9px;
+    height: 23px;
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0; //4px;
+    left: 0;
+    right: 0;
+    height: 40px;
+
+    background-color: #373737;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+    border: none;
+
+    z-index: 999;
+}
+
+.nav-ul {
+    margin-top: 0;
+    margin-left: 10px;
+    margin-bottom: 0;
+    margin-right: 10px;
+    padding: 0;
+
+    list-style-type: none;
+}
+
+.nav-li {
+    float: right;
+}
+
+.nav-li-a {
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 35px;
+
+    text-decoration: none;
+    color: white;
+}
+
+.nav-spacer
+{
+    width: 100%;
+    height: 40px; //44px; // use with nav bar color strip
+}
+
+.nav-left {
+    float: left !important;
+}
+
+.nav-icon {
+    margin-bottom: -6px;
+}
+
+.nav-logo {
+    margin-bottom: -4px;
+}
+
+.profile {
+    height: 30px;
+    width: auto;
+    border-radius: 50%;
+    margin-bottom: -20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.uf-dropdown {
+    display: inline-block;
+    height: 35px;
+    width: 40px;
+}
+
+.dropbtn {
+    background: #373737;
+    display: block;
+    height: 40px;
+}
+
+.uf-dropdown:hover .uf-dropdown-content {
+    display: block;
+    right:0;
+}
+
+.uf-dropdown-content {
+    border-radius: 0 0 4px 4px;
+    display: none;
+    position: absolute;
+    background-color: #373737;
+    width: auto;
+    min-width: 200px;
+    z-index: 1;
+    padding-bottom: 10px;
+}
+
+.nav-text {
+    line-height: 18px;
+    color: #F7FDF3;
+    padding: 5px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.nav-option {
+}
+.nav-option:hover {
+    color: #9f9f9f;
+}
+
+.nav-svg {
+    color: #F7F7F7;
+    height: 15px;
+    width: auto;
+    margin-bottom: -2px;
+    padding-right: 5px;
+}
+
+.dropdown-divider {
+    border-bottom: 1px solid #474747;
+    margin: 10px 20px;
+    width: auto;
+}
+
+/*-------*/
+
+.lower-nav-bar {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+    position: fixed;
+    //margin-top: -20px;
+    width: 100%;
+    height: 40px;
+
+    background-color: #ffffff;
+    border: none;
+
+    z-index: 998;
+}
+
+.lower-posts-dropdown {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+}
+
+.lower-posts-dropdown:hover .lower-posts-dropdown-content {
+    display: block;
+    left:0;
+}
+
+.lower-nav-dropdown-menu-gap {
+    margin-top: -8px;
+
+}
+
+
+
+.lower-posts-dropdown-content {
+    //box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+    margin-left: 0;
+    margin-top: -5px;
+    border-radius: 0 0 4px 4px;
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    width: auto;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.post-dropdown-theme {
+    border:0;
+    outline:0;
+    border-radius: 0 0 4px 4px;
+    background-color: #ffffff;
+    width: auto;
+    min-width: 200px;
+}
+
+.lower-posts-nav-text {
+    line-height: 18px;
+    color: #373737;
+    padding: 5px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.lower-nav-ellipsis {
+    margin-left: 10px;
+    margin-right: 80px;
+    padding-top: 22px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 35px;
+
+    text-decoration: none;
+    color: white;
+}
+
+.lower-nav-center-items {
+
+}
+
+.lower-nav-center-option {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: "Ramaraja", serif;
+    font-weight: bold;
+    color: #373737;
+
+}
+.lower-nav-center-option:hover {
+    text-decoration: underline;
+}
+
+.lower-nav-friends {
+    padding-right: 22px;
+}
+
+.content-filter-button {
+    padding-top: 2px;
+    padding-bottom: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 30px;
+}
+
+.nav-height{ height: 40px;}
+
+.lower-nav-content-selector {
+    height: 30px;
+}
+
+//-----
+
+.nav-log-in {
+    margin-left: 0;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.nav-sign-up {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.signup-color {
+    background-color: #373737;
+    color: #F7FDF3;
+    border: 1px solid #F7FDF3;
+    font-weight: bold;
+
+    &:hover {
+        background-color: #F7FDF3;
+        border: 1px solid #F7FDF3;
+        color: #373737;
+    }
+    &:active {
+        background-color: #F7FDF3;
+        border: 1px solid #F7FDF3;
+        color: #373737;
+    }
+    &:focus {
+        background-color: #F7FDF3;
+        border: 1px solid #F7FDF3;
+        color: #373737;
+    }
+}
+
+.login-color {
+    width: 100px;
+
+    background-color: #373737;
+    color: #F7FDF3;
+    border: 1px solid #F7FDF3;
+    font-weight: bold;
+
+    &:hover {
+        background-color: #F7FDF3;
+        border: 1px solid #F7FDF3;
+        color: #373737;
+    }
+    &:active {
+        background-color: #F7FDF3;
+        border: 1px solid #F7FDF3;
+        color: #373737;
+    }
+    &:focus {
+        background-color: #F7FDF3;
+        border: 1px solid #F7FDF3;
+        color: #373737;
+    }
+}
+
+/*
+
+background-color: #373737;
+    color: rgb(237,171,109); //#F7FDF3;
+    border: 1px solid rgb(237,171,109); //#F7FDF3;
+    //border: none;
+    font-weight: bold;
+
+    &:hover {
+        background: rgb(237,171,109);
+        //background: linear-gradient(90deg, rgba(237,171,109,1) 0%, rgba(207,70,73,1) 100%);
+        //background-color: #F7FDF3;
+        border: 1px solid rgb(237,171,109); //#F7FDF3;
+        color: #373737;
+    }
+    &:active {
+        background: rgb(237,171,109);
+        //background: linear-gradient(90deg, rgba(237,171,109,1) 0%, rgba(207,70,73,1) 100%);
+        //background-color: #F7FDF3;
+        border: 1px solid rgb(237,171,109); //#F7FDF3;
+        color: #373737;
+    }
+    &:focus {
+        background: rgb(237,171,109);
+        //background: linear-gradient(90deg, rgba(237,171,109,1) 0%, rgba(207,70,73,1) 100%);
+        //background-color: #F7FDF3;
+        border: 1px solid rgb(237,171,109); //#F7FDF3;
+        color: #373737;
+    }
+ */

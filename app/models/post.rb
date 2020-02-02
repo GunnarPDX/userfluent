@@ -49,12 +49,29 @@ class Post < ActiveRecord::Base
     end
   end
 
-  def self.filter(platform)
-    if category.present?
-      filter_platform(platform)
+  def self.filter(platform, rank)
+    puts platform
+    puts rank
+
+    if platform.present?
+
+      if rank == 'popular'
+        filter_platform(platform).reorder(cached_votes_score: :desc)
+      else
+        filter_platform(platform).reorder('updated_at DESC')
+      end
+
     else
-      order('created_at DESC')
+
+      if rank == 'popular'
+        puts 'reached rank'
+        order(cached_votes_score: :desc)
+      else
+        order('created_at DESC')
+      end
+
     end
+
   end
 
 end

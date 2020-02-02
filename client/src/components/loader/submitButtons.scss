@@ -1,0 +1,222 @@
+//https://codepen.io/keenanpayne/pen/YmKKer
+
+.submit-button {
+  background-color: #EDAB6D; //#373737;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  font-size: 12pt;
+  cursor: pointer;
+  display: inline-block;
+  height: 50px;
+  letter-spacing: .5px;
+  line-height: 50px;
+  overflow: hidden;
+  outline: none;
+  padding: 0 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 150ms, color 150ms ease-in-out;
+  white-space: nowrap;
+  width: 100%;
+
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  //
+  // Text
+  // ----
+  .submit-ul {
+    //float: left;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    transition: transform 300ms cubic-bezier(0,.65,.70,.90);
+    transform-style: preserve-3d;
+  }
+
+  .submit-li {
+    --rotateX: 0deg;
+
+    backface-visibility: hidden;
+    display: block;
+    transition: opacity 150ms;
+    transform-origin: 50% 50%;
+    transform: rotateX(var(--rotateX)) translateZ(10px);
+    width: 100%;
+
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      opacity: 0;
+      position: absolute;
+    }
+
+    &:nth-child(2) {
+      --rotateX: -90deg;
+    }
+
+    &:nth-child(3) {
+      --rotateX: -180deg;
+    }
+
+    &:nth-child(4) {
+      --rotateX: -270deg;
+    }
+  }
+
+  //
+  // Icons
+  // -----
+
+  // Container
+  .submit-span {
+    align-items: center;
+    //display: flex;
+    float: left;
+    height: 100%;
+    justify-content: center;
+    max-width: 0;
+    opacity: 0;
+    position: relative;
+    transform: translateX(-100%);
+    transition: max-width 50ms ease, opacity 100ms ease, transform 150ms ease-in-out;
+    width: 20px;
+  }
+
+  svg {
+    position: absolute;
+
+    // Circle
+    &:nth-child(1) {
+      --stroke: 40;
+
+      fill: transparent;
+      height: 20px;
+      left: 0;
+      stroke: white;
+      stroke-dasharray: var(--stroke);
+      stroke-dashoffset: calc(var(--stroke) * 2);
+      top: 15px;
+      width: 20px;
+    }
+
+    // Checkmark
+    &:nth-child(2) {
+      --stroke: 16;
+
+      fill: transparent;
+      height: 16px;
+      left: 50%;
+      stroke: transparent;
+      stroke-dasharray: var(--stroke);
+      stroke-dashoffset: var(--stroke);
+      top: 25px;
+      transform: translate3d(-5px, -3px, 0);
+      transition: stroke 300ms;
+      width: 16px;
+    }
+  }
+
+  //
+  // States
+  // ------
+  &.-request,
+  &.-failure,
+  &.-success {
+    text-align: left;
+    pointer-events: none;
+
+    .submit-span {
+      margin-right: 12px;
+      max-width: initial;
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .submit-li:nth-child(1) {
+      opacity: 0;
+      position: absolute;
+    }
+  }
+
+  &.-request {
+    background-color: #71c7ba;
+
+    svg {
+      &:nth-child(1) {
+        animation: stroke 2s linear infinite forwards, rotate 1s linear infinite forwards;
+      }
+    }
+
+    .submit-ul {
+      transform: rotateX(90deg);
+    }
+
+    .submit-li:nth-child(2) {
+      opacity: 1;
+      position: relative;
+    }
+  }
+
+  &.-failure {
+    background-color: #c76354;
+
+    .submit-ul {
+      transform: rotateX(180deg);
+    }
+
+    .submit-li:nth-child(3) {
+      opacity: 1;
+      position: relative;
+    }
+  }
+
+  &.-success {
+    background-color: #00BF9C;
+
+    svg {
+      &:nth-child(1) {
+        fill: #fff;
+        stroke-dasharray: 0;
+      }
+
+      &:nth-child(2) {
+        animation: stroke 300ms ease-in-out forwards;
+        stroke: #00BF9C;
+      }
+    }
+
+    .submit-ul {
+      transform: rotateX(270deg);
+    }
+
+    .submit-li:nth-child(4) {
+      opacity: 1;
+      position: relative;
+    }
+  }
+}
+
+// Animations
+@keyframes stroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+//
+// Demo
+// ----
+
+

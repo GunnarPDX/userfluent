@@ -14,7 +14,7 @@ class ValidationTest extends Component {
         const client = localStorage.getItem('client');
         const uid = localStorage.getItem('uid');
         axios.get('/api/v1/demo', {
-            headers: {'Content-Type': 'application/json', 'access-token' : token, 'client':client, 'uid': uid}
+            headers: {'Content-Type': 'application/json', 'access-token': token, 'client': client, 'uid': uid}
         })
             .then((res) => {
                 console.log(res);

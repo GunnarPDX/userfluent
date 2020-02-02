@@ -1,0 +1,239 @@
+
+
+
+/*
+.posts {
+    display: grid;
+    grid-gap: 1em;
+
+    @media only screen and (min-width: 1550px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @media only screen and (max-width: 1550px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media only screen and (max-width: 1100px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media only screen and (max-width: 775px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+*/
+
+.posts-container{
+    margin: 0 auto;
+}
+
+
+
+
+//-----
+.wrap-inner {
+    padding: 30px 30px 40px 30px;
+    width: 100vw;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.content {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 14px;
+}
+
+.main-full {
+    float: none;
+    width: auto;
+    max-width: none;
+}
+//-----
+
+
+
+
+.post-wrapper {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+    border-radius: 2px;
+    padding: 10px;
+    width: 370px;
+    height: 315px; //295px;
+    background: white;
+}
+
+.post {
+    position: relative;
+    display: block;
+    color: #333 !important;
+
+    .post-data {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 10px;
+        background: rgba(white, .9);
+        cursor: pointer;
+
+        .post-title {
+            font-weight: bold;
+        }
+        .post-description {
+            font-size: .9rem;
+        }
+        .post-time {
+            font-size: .8rem;
+            padding-top: .5rem;
+        }
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.user-data {
+    padding: 1rem 0 0 0;
+}
+
+.user-name {
+    display: inline-block;
+    position: relative;
+    top: -4px;
+    padding-left: 5px;
+}
+
+.user-thumb {
+    display: inline-block;
+    img {
+        border-radius: 50%;
+    }
+}
+
+.post-analytics {
+    padding-top: 5px;
+    text-align: right;
+    color: #A7A7A7;
+}
+
+
+.post-container {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+    border-radius: 2px;
+    padding: 40px;
+    background: white;
+}
+
+.post-full {
+    text-align: center;
+}
+
+.views-icon {
+    width: 20px;
+    margin-bottom: -1px;
+}
+
+.post-like-icon {
+    height: 17px;
+}
+
+.post-image-placeholder{
+    width: 350px;
+    height: 275px;
+    background-color: #373737;
+    //background-color: #ff5300;//#00c990;
+}
+
+.post-image-placeholder:hover .image-fade {
+    opacity: 0.35;
+    //filter: blur(1px);
+}
+
+.image-fade {
+    opacity: 1;
+    transition: .5s ease;
+}
+
+.post-image-placeholder:hover .tumbnail-hover-info {
+    opacity: 1;
+}
+
+.post-image-placeholder:hover .post-hover-title-container {
+    opacity: 1;
+}
+
+.tumbnail-hover-info {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    left: 17px;
+    top: 17px;
+}
+
+.post-hover-avatar {
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.post-hover-avatar {
+    border-radius: 50%;
+    height: 30px;
+    width: auto;
+}
+
+.post-hover-username {
+    line-height: 30px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.post-hover-title-container{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.post-hover-title {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(1px); /* Safari 9+ */
+    backdrop-filter: blur(1px); /* Chrome and Opera */
+}
+
+.posts-pagination-container {
+    width: 60%;
+    margin: 0 auto;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.posts-page-is-current {
+    color: #FFFFFF;
+    background: #EDAB6D; //#373737;
+    border: none;
+    cursor: default;
+    &:hover {
+        color: #FFFFFF;
+        background: #EDAB6D; //#373737;
+        border: none;
+    }
+    &:active {
+        color: #FFFFFF;
+        background: #EDAB6D; //#373737;
+        border: none;
+    }
+}
