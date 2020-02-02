@@ -134,10 +134,6 @@ class ProfileSettings extends Component {
                     company: currentComponent.state.company,}},
             {headers: {'Content-Type': 'application/json', 'access-token' : token, 'client':client, 'uid': uid}}
         )
-            .then( resp => {
-                if (!resp.ok) { throw resp }
-                console.log(resp.json())
-            })
             .then(resp => {
                 currentComponent.setState({loading: 'success'});
             });
