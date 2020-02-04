@@ -83,7 +83,7 @@ module Api::V1
       @posts_w_liked = []
       search = content_filter
 
-      @pagy, posts = pagy(search, page: params[:page], items: 24)
+      @pagy, posts = pagy(search, page: params[:page], items: 1)
       # posts = Post.all
       posts.each do |p|
         add_user_data_to_posts(p)
