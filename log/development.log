@@ -25719,3 +25719,298 @@ Completed 401 Unauthorized in 46ms (Views: 31.2ms | ActiveRecord: 7.1ms)
 Completed 200 OK in 69ms (Views: 15.2ms | ActiveRecord: 4.8ms)
 
 
+Started GET "/api/v1/user" for 127.0.0.1 at 2020-02-02 20:30:48 -0800
+Started GET "/api/v1/posts?page=1&query=&platform=&rank=" for 127.0.0.1 at 2020-02-02 20:30:48 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PostsController#index as HTML
+  Parameters: {"page"=>"1", "query"=>"", "platform"=>"", "rank"=>""}
+Processing by Api::V1::UserController#index as HTML
+  [1m[35m (8.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:86
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/user_controller.rb:10
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 24], ["OFFSET", 0]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/user_controller.rb:13
+  ↳ app/controllers/api/v1/posts_controller.rb:88
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.98ms)
+Completed 401 Unauthorized in 59ms (Views: 32.9ms | ActiveRecord: 11.2ms)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (25.78ms)
+Completed 200 OK in 98ms (Views: 28.8ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/api/v1/user" for 127.0.0.1 at 2020-02-02 20:30:55 -0800
+Started GET "/api/v1/posts?page=1&query=&platform=&rank=" for 127.0.0.1 at 2020-02-02 20:30:55 -0800
+Processing by Api::V1::UserController#index as HTML
+Processing by Api::V1::PostsController#index as HTML
+  Parameters: {"page"=>"1", "query"=>"", "platform"=>"", "rank"=>""}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/user_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/user_controller.rb:13
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+  ↳ app/controllers/api/v1/posts_controller.rb:86
+Completed 401 Unauthorized in 3ms (Views: 1.5ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 24], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/posts_controller.rb:88
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.02ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.77ms)
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/posts?page=1&query=&platform=web_app&rank=" for 127.0.0.1 at 2020-02-02 20:30:57 -0800
+Processing by Api::V1::PostsController#index as HTML
+  Parameters: {"page"=>"1", "query"=>"", "platform"=>"web_app", "rank"=>""}
+  [1m[35m (18.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" INNER JOIN (SELECT "posts"."id" AS pg_search_id, (ts_rank((to_tsvector('simple', coalesce("posts"."platform"::text, ''))), (to_tsquery('simple', ''' ' || 'web_app' || ' ''')), 0)) AS rank FROM "posts" WHERE ((to_tsvector('simple', coalesce("posts"."platform"::text, ''))) @@ (to_tsquery('simple', ''' ' || 'web_app' || ' ''')))) AS pg_search_a44f1b975171163546d46b ON "posts"."id" = pg_search_a44f1b975171163546d46b.pg_search_id[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:86
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" INNER JOIN (SELECT "posts"."id" AS pg_search_id, (ts_rank((to_tsvector('simple', coalesce("posts"."platform"::text, ''))), (to_tsquery('simple', ''' ' || 'web_app' || ' ''')), 0)) AS rank FROM "posts" WHERE ((to_tsvector('simple', coalesce("posts"."platform"::text, ''))) @@ (to_tsquery('simple', ''' ' || 'web_app' || ' ''')))) AS pg_search_a44f1b975171163546d46b ON "posts"."id" = pg_search_a44f1b975171163546d46b.pg_search_id ORDER BY updated_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 24], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/posts_controller.rb:88
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.03ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.81ms)
+Completed 200 OK in 89ms (Views: 1.5ms | ActiveRecord: 75.0ms)
+
+
+Started GET "/api/v1/posts?page=1&query=&platform=&rank=" for 127.0.0.1 at 2020-02-02 20:30:58 -0800
+Processing by Api::V1::PostsController#index as HTML
+  Parameters: {"page"=>"1", "query"=>"", "platform"=>"", "rank"=>""}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:86
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 24], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/posts_controller.rb:88
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.03ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/auth" for 127.0.0.1 at 2020-02-02 20:31:19 -0800
+Processing by DeviseTokenAuth::RegistrationsController#create as HTML
+  Parameters: {"username"=>"bob", "email"=>"bob@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."provider" = $2 LIMIT $3[0m  [["email", "bob@gmail.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "bob"], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (3.9ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "email", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["uid", "bob@gmail.com"], ["encrypted_password", "$2a$11$pF.BPoFoh.v6AobMfbmYael7.Y2wUldS8JrCQ4AYRSp2TJHS5wUGK"], ["email", "bob@gmail.com"], ["created_at", "2020-02-03 04:31:19.804032"], ["updated_at", "2020-02-03 04:31:19.804032"], ["username", "bob"]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "bob"], ["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (3.6ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"98AfbpRMF27K0wTw227HMw\\\":{\\\"token\\\":\\\"$2a$10$Y/u6IE4Kn6epM2UFNxqIgec92af01wUTtBhgWdnBg6/.ifhoeZB86\\\",\\\"expiry\\\":1581913879}}\""], ["updated_at", "2020-02-03 04:31:19.871802"], ["id", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.34ms)
+Completed 200 OK in 256ms (Views: 19.6ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/api/v1/user/user_info" for 127.0.0.1 at 2020-02-02 20:31:19 -0800
+Processing by Api::V1::UserController#user_info as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/user_controller.rb:18
+[active_model_serializers] Rendered ProfileSerializer with ActiveModelSerializers::Adapter::Attributes (0.85ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 72ms (Views: 1.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/user" for 127.0.0.1 at 2020-02-02 20:31:20 -0800
+Started GET "/api/v1/user/user_info" for 127.0.0.1 at 2020-02-02 20:31:20 -0800
+Processing by Api::V1::UserController#index as HTML
+Processing by Api::V1::UserController#user_info as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/user_controller.rb:10
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ProfileSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+  ↳ app/controllers/api/v1/user_controller.rb:18
+[active_model_serializers] Rendered ProfileSerializer with ActiveModelSerializers::Adapter::Attributes (0.86ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 11ms (Views: 1.5ms | ActiveRecord: 3.0ms)
+
+
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 19ms (Views: 2.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/v1/posts?page=1&query=&platform=&rank=" for 127.0.0.1 at 2020-02-02 20:31:22 -0800
+Processing by Api::V1::PostsController#index as HTML
+  Parameters: {"page"=>"1", "query"=>"", "platform"=>"", "rank"=>""}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:86
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 24], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/posts_controller.rb:88
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.03ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/v1/posts" for 127.0.0.1 at 2020-02-02 20:31:49 -0800
+Processing by Api::V1::PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"Lorem ipsum", "content"=>"...", "image"=>"gffmtjbj0lekvrrpnkht", "category"=>"books", "platform"=>"web_app"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:44
+  [1m[36mPost Create (8.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "image", "category", "platform", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Lorem ipsum"], ["content", "..."], ["created_at", "2020-02-03 04:31:49.511298"], ["updated_at", "2020-02-03 04:31:49.511298"], ["image", "gffmtjbj0lekvrrpnkht"], ["category", "books"], ["platform", "web_app"], ["user_id", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:44
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:46
+  [1m[36mPost Update (0.2ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1, "time" = $2 WHERE "posts"."id" = $3[0m  [["updated_at", "2020-02-03 04:31:49.521463"], ["time", "February 2nd, 2020 20:31"], ["id", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:46
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:46
+[active_model_serializers]   [1m[35m (4.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:47
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (21.55ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 61ms (Views: 16.7ms | ActiveRecord: 18.8ms)
+
+
+Started GET "/api/v1/posts?page=1&query=&platform=&rank=" for 127.0.0.1 at 2020-02-02 20:31:49 -0800
+Processing by Api::V1::PostsController#index as HTML
+  Parameters: {"page"=>"1", "query"=>"", "platform"=>"", "rank"=>""}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:86
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/posts_controller.rb:88
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:130
+  [1m[36mActsAsVotable::Vote Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:131
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:137
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers]   [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.53ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.01ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 15ms (Views: 3.9ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/v1/posts/1" for 127.0.0.1 at 2020-02-02 20:31:51 -0800
+Processing by Api::V1::PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:96
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:97
+  [1m[36mImpression Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2 AND "impressions"."impressionable_type" = $3 AND "impressions"."impressionable_id" = $4 AND "impressions"."session_hash" IS NULL LIMIT $5[0m  [["impressionable_id", 1], ["impressionable_type", "Post"], ["impressionable_type", "Post"], ["impressionable_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:98
+  [1m[36mImpression Create (7.7ms)[0m  [1m[32mINSERT INTO "impressions" ("impressionable_type", "impressionable_id", "user_id", "controller_name", "action_name", "request_hash", "ip_address", "message", "referrer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["impressionable_type", "Post"], ["impressionable_id", 1], ["user_id", 1], ["controller_name", "posts"], ["action_name", "show"], ["request_hash", "d64d589b99fc5f2fd645b98a5d0b98279e820f91cddc18bc0dd072054b5c43d8"], ["ip_address", "127.0.0.1"], ["message", "my optional message"], ["referrer", "http://localhost:3000/"], ["created_at", "2020-02-03 04:31:51.863805"], ["updated_at", "2020-02-03 04:31:51.863805"]]
+  ↳ app/controllers/api/v1/posts_controller.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:98
+  [1m[36mActsAsVotable::Vote Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:99
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:105
+[active_model_serializers]   [1m[35m (21.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:26
+[active_model_serializers] Rendered PostWLikedSerializer with ActiveModelSerializers::Adapter::Attributes (27.54ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 69ms (Views: 5.7ms | ActiveRecord: 34.2ms)
+
+
+Started POST "/api/v1/comments" for 127.0.0.1 at 2020-02-02 20:32:00 -0800
+Processing by Api::V1::CommentsController#create as HTML
+  Parameters: {"comment"=>{"content"=>"hello", "post_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/comments_controller.rb:8
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:8
+  [1m[36mComment Create (1.6ms)[0m  [1m[32mINSERT INTO "comments" ("content", "created_at", "updated_at", "post_id", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "hello"], ["created_at", "2020-02-03 04:32:00.146285"], ["updated_at", "2020-02-03 04:32:00.146285"], ["post_id", 1], ["user_id", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/comments_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/comments_controller.rb:10
+  [1m[36mComment Update (0.2ms)[0m  [1m[33mUPDATE "comments" SET "updated_at" = $1, "time" = $2 WHERE "comments"."id" = $3[0m  [["updated_at", "2020-02-03 04:32:00.149771"], ["time", "February 2nd, 2020 20:32"], ["id", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/comments_controller.rb:10
+[active_model_serializers]   [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers] Rendered CommentSerializer with ActiveModelSerializers::Adapter::Attributes (5.11ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 26ms (Views: 8.2ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/v1/user" for 127.0.0.1 at 2020-02-02 20:32:00 -0800
+Started GET "/api/v1/posts/1" for 127.0.0.1 at 2020-02-02 20:32:00 -0800
+Processing by Api::V1::UserController#index as HTML
+Processing by Api::V1::PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/user_controller.rb:10
+[active_model_serializers] Rendered ProfileSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:96
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:97
+  [1m[36mImpression Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2 AND "impressions"."impressionable_type" = $3 AND "impressions"."impressionable_id" = $4 AND "impressions"."session_hash" IS NULL LIMIT $5[0m  [["impressionable_id", 1], ["impressionable_type", "Post"], ["impressionable_type", "Post"], ["impressionable_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:98
+  [1m[36mActsAsVotable::Vote Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:99
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:105
+[active_model_serializers]   [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:26
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/comment_serializer.rb:9
+[active_model_serializers] Rendered PostWLikedSerializer with ActiveModelSerializers::Adapter::Attributes (4.58ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 12ms (Views: 4.3ms | ActiveRecord: 3.6ms)
+
+

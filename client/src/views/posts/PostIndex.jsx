@@ -66,7 +66,8 @@ class PostIndex extends Component {
   handlePlatform = (platform) => {
       const currentComponent = this;
       this.setState({
-          platform: platform
+          platform: platform,
+          page: 1
       }, function () {
           currentComponent.componentDidMount();
       });

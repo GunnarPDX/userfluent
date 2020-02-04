@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom'
 
 class PostsNavigation extends Component {
 
+    /*
+
+    Page num needs to be reset between category changes!!!
+
+    */
+
     state = {
         category: '',
         platform: '',
@@ -37,6 +43,7 @@ class PostsNavigation extends Component {
                             </div>
                             <div className="dropdown-menu lower-nav-dropdown-menu-gap" id="dropdown-menu6" role="menu">
                                 <div className="dropdown-content post-dropdown-theme">
+                                    {/* Mostly dead links right now */}
                                     <div className="dropdown-item">
                                         <Link to={'/'}>News Feed</Link>
                                     </div>
