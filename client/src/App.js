@@ -22,7 +22,6 @@ function App() {
 
           <NavigationUpper />
 
-
           <Route exact path="/" component={PostIndex} />
           <Route exact path="/posts/new" component={NewPost} />
           <Route exact path="/about" component={About} />
@@ -33,7 +32,6 @@ function App() {
 
           <div className={'content-spacer'}/>
 
-
         </div>
       </Router>
   );
@@ -41,21 +39,4 @@ function App() {
 
 export default App;
 
-/*
-    <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-        >
-          Hello!
-        </a>
-
-          <SessionManager/>
-
-          <ValidationTest/>
-
-      </header>
-
-    </div>
-*/
 
