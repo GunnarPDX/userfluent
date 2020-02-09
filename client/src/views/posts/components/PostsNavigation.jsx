@@ -4,12 +4,6 @@ import { Link } from 'react-router-dom'
 
 class PostsNavigation extends Component {
 
-    /*
-
-    Page num needs to be reset between category changes!!!
-
-    */
-
     state = {
         category: '',
         platform: '',
