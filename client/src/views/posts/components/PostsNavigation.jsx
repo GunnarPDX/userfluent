@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom'
 
 class PostsNavigation extends Component {
 
+    /*
+        Add WYSIWYG form to new post
+    */
+
     state = {
         category: '',
         platform: '',

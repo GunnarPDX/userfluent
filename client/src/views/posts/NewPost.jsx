@@ -6,6 +6,8 @@ import LoadingButton from "../../components/loader/LoadingButton";
 import CategorySelect from "../../components/forms/CategorySelect";
 import PlatformSelect from "../../components/forms/PlatformSelect";
 
+import FormWYSIWYG from "../../components/wysiwyg/FormWYSIWYG";
+
 class NewPost extends Component {
 
     state = {
@@ -152,6 +154,9 @@ class NewPost extends Component {
                           <textarea name="content" id="" cols="30" rows="10" onChange={this.handleChange} className="settings-bio-text-area form-right"/>
                       </div>
                   </div>
+
+                  <FormWYSIWYG/>
+
               </form>
 
               <div className={"settings-container"}>
