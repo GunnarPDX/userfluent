@@ -8,6 +8,7 @@ import PostLike from './components/PostLike'
 import DestroyPost from './components/DestroyPost'
 import DestroyComment from "./components/DestroyComment";
 import axios from "axios";
+import DisplayWYSIWYG from "../../components/forms/DisplayWYSIWYG";
 
 class ShowPost extends Component {
 
@@ -30,7 +31,8 @@ class ShowPost extends Component {
             .then(post => {
                 this.setState({
                     post: [post.data]
-                })
+                });
+                console.log(post.data);
             })
             .catch(function(err) {
                 console.log(err);
@@ -83,14 +85,15 @@ class ShowPost extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className={"post-box"}>
+                            <div className={"post-content-box"}>
 
                                 <div>
                                     <div className="bold-title"> {post.title} </div>
                                 </div>
 
                                 <div className={"post-main-content"}>
-                                    {post.content}
+                                    <div dangerouslySetInnerHTML={{__html: post.content}}/>
+                                    {/*post.content*/}
                                 </div>
                             </div>
                         </div>
@@ -101,7 +104,7 @@ class ShowPost extends Component {
                                 </div>
                             </div>
                             <div>
-                                <div className={"comments-list-box-nil"}>
+                                <div className={""}>
                                     {this.renderComments(post)}
                                 </div>
                             </div>

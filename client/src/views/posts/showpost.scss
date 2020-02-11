@@ -36,9 +36,19 @@
   width: 98%;
 }
 
+.post-content-box{
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #EFEFEF;
+  border-radius: 4px;
+  background-color: #ffffff;
+  width: 98%;
+}
+
 .post-main-content {
   font-family: "Ramaraja", serif;
-  font-size: 14pt;
+  //font-size: 14pt;
+  text-align: left;
 
   width: 100%;
   padding: 10px;
