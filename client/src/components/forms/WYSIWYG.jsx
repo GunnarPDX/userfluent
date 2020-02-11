@@ -27,6 +27,20 @@ class WYSIWYG extends Component {
                     wrapperClassName="demo-wrapper"
                     editorClassName="wysiwyg-text-area"
                     onEditorStateChange={this.onEditorStateChange}
+                    toolbar={{
+                        options: ['inline', 'blockType', 'fontSize', 'textAlign', 'link'],
+                        inline: {
+                        inDropdown: false,
+                        className: undefined,
+                        component: undefined,
+                        dropdownClassName: undefined,
+                        options: ['bold', 'underline', 'strikethrough', 'monospace'],
+                        //bold: { icon: bold, className: undefined },
+                        //underline: { icon: underline, className: undefined },
+                        //strikethrough: { icon: strikethrough, className: undefined },
+                        //monospace: { icon: monospace, className: undefined },
+                        }
+                    }}
                 />
             </div>
         )
