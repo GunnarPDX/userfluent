@@ -1,5 +1,6 @@
 import "./posts.scss";
 import "./showpost.scss";
+import "../../components/forms/wysiwyg.scss"
 
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'

@@ -1,0 +1,30 @@
+
+code {
+  background-color: #dddddd;
+  color: #ed2958;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+pre {
+  background-color:  #EDAB6D;
+  padding: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+
+  span {
+    background-color:  #EDAB6D !important;
+    color: #373737;
+  }
+}
+
+span {
+  background-color: inherit;
+}
+
+a {
+  span {
+    color: #6c3516 !important;
+    text-decoration: underline;
+  }
+}
