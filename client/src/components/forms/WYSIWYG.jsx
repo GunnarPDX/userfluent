@@ -35,10 +35,6 @@ class WYSIWYG extends Component {
                         component: undefined,
                         dropdownClassName: undefined,
                         options: ['bold', 'underline', 'strikethrough', 'monospace'],
-                        //bold: { icon: bold, className: undefined },
-                        //underline: { icon: underline, className: undefined },
-                        //strikethrough: { icon: strikethrough, className: undefined },
-                        //monospace: { icon: monospace, className: undefined },
                         }
                     }}
                 />

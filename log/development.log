@@ -29710,3 +29710,195 @@ Processing by Api::V1::UserController#index as HTML
 Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms)
 
 
+Started POST "/api/v1/posts" for 127.0.0.1 at 2020-02-10 23:07:00 -0800
+Processing by Api::V1::PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"asdsadas", "content"=>"<p>hbsabdjasbd</p>\n<p>sdsadsa</p>\n<p>sadasdsa</p>\n", "image"=>"w4vr1ees5rp9db36lkx6", "category"=>"games", "platform"=>"desktop"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:44
+  [1m[36mPost Create (6.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "image", "category", "platform", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "asdsadas"], ["content", "<p>hbsabdjasbd</p>\n<p>sdsadsa</p>\n<p>sadasdsa</p>\n"], ["created_at", "2020-02-11 07:07:00.096636"], ["updated_at", "2020-02-11 07:07:00.096636"], ["image", "w4vr1ees5rp9db36lkx6"], ["category", "games"], ["platform", "desktop"], ["user_id", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:44
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:46
+  [1m[36mPost Update (1.3ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1, "time" = $2 WHERE "posts"."id" = $3[0m  [["updated_at", "2020-02-11 07:07:00.108513"], ["time", "February 10th, 2020 23:07"], ["id", 6]]
+  ↳ app/controllers/api/v1/posts_controller.rb:46
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:46
+[active_model_serializers]   [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 6], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:47
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (5.15ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 28ms (Views: 4.3ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/api/v1/posts?page=1&query=&platform=&rank=" for 127.0.0.1 at 2020-02-10 23:07:00 -0800
+Processing by Api::V1::PostsController#index as HTML
+  Parameters: {"page"=>"1", "query"=>"", "platform"=>"", "rank"=>""}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:86
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/posts_controller.rb:88
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:130
+  [1m[36mActsAsVotable::Vote Exists (4.1ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 6], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:131
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:137
+  [1m[36mActsAsVotable::Vote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:131
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:137
+  [1m[36mActsAsVotable::Vote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:131
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:137
+  [1m[36mActsAsVotable::Vote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:131
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:137
+  [1m[36mActsAsVotable::Vote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:131
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:137
+  [1m[36mActsAsVotable::Vote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:131
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:137
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers]   [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 6], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/comment_serializer.rb:9
+[active_model_serializers]   [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/comment_serializer.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.6ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (18.93ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 37ms (Views: 16.5ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/api/v1/posts/6" for 127.0.0.1 at 2020-02-10 23:07:03 -0800
+Processing by Api::V1::PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:96
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:97
+  [1m[36mImpression Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2 AND "impressions"."impressionable_type" = $3 AND "impressions"."impressionable_id" = $4 AND "impressions"."session_hash" IS NULL LIMIT $5[0m  [["impressionable_id", 6], ["impressionable_type", "Post"], ["impressionable_type", "Post"], ["impressionable_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:98
+  [1m[36mImpression Create (4.4ms)[0m  [1m[32mINSERT INTO "impressions" ("impressionable_type", "impressionable_id", "user_id", "controller_name", "action_name", "request_hash", "ip_address", "message", "referrer", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["impressionable_type", "Post"], ["impressionable_id", 6], ["user_id", 1], ["controller_name", "posts"], ["action_name", "show"], ["request_hash", "5b4a4d562b8d4e7ede1b1399931f2d2f9f772d26a1570c706e322faf1f51c3dc"], ["ip_address", "127.0.0.1"], ["message", "my optional message"], ["referrer", "http://localhost:3000/"], ["created_at", "2020-02-11 07:07:03.456554"], ["updated_at", "2020-02-11 07:07:03.456554"]]
+  ↳ app/controllers/api/v1/posts_controller.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:98
+  [1m[36mActsAsVotable::Vote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 6], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:99
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:105
+[active_model_serializers]   [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 6], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:26
+[active_model_serializers] Rendered PostWLikedSerializer with ActiveModelSerializers::Adapter::Attributes (3.39ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 23ms (Views: 3.4ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/v1/posts?page=1&query=&platform=&rank=" for 127.0.0.1 at 2020-02-10 23:07:16 -0800
+Processing by Api::V1::PostsController#index as HTML
+  Parameters: {"page"=>"1", "query"=>"", "platform"=>"", "rank"=>""}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:86
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/posts_controller.rb:88
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "bob@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:130
+  [1m[36mActsAsVotable::Vote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 6], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:131
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:137
+  [1m[36mActsAsVotable::Vote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 5], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:131
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:137
+  [1m[36mActsAsVotable::Vote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 4], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:131
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:137
+  [1m[36mActsAsVotable::Vote Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 3], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:131
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:137
+  [1m[36mActsAsVotable::Vote Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 2], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:131
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:137
+  [1m[36mActsAsVotable::Vote Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "votes" WHERE "votes"."voter_id" = $1 AND "votes"."voter_type" = $2 AND "votes"."votable_id" = $3 AND "votes"."votable_type" = $4 AND "votes"."vote_scope" IS NULL AND "votes"."vote_flag" = $5 LIMIT $6[0m  [["voter_id", 1], ["voter_type", "User"], ["votable_id", 1], ["votable_type", "Post"], ["vote_flag", true], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:131
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:137
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/posts_controller.rb:10
+[active_model_serializers]   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 6], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 5], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 4], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/comment_serializer.rb:9
+[active_model_serializers]   [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 3], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 2], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "impressions"."request_hash") FROM "impressions" WHERE "impressions"."impressionable_id" = $1 AND "impressions"."impressionable_type" = $2[0m  [["impressionable_id", 1], ["impressionable_type", "Post"]]
+[active_model_serializers]   ↳ app/models/post.rb:35
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/comment_serializer.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.27ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (19.44ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/gunnarrosenberg/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 35ms (Views: 18.5ms | ActiveRecord: 4.6ms)
+
+
