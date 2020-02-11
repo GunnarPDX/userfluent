@@ -1,28 +1,31 @@
-import "../../views/forms.scss";
+import "./forms.scss";
 import React, { Component } from 'react'
 
 import { Editor } from 'react-draft-wysiwyg';
 import { EditorState, convertFromRaw, convertToRaw } from 'draft-js';
 import '../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import draftToHtml from 'draftjs-to-html';
+import htmlToDraft from 'html-to-draftjs';
 
-class FormWYSIWYG extends Component {
+class WYSIWYG extends Component {
     state = {
-        editorState: EditorState.createEmpty(),
+        content: EditorState.createEmpty(),
     };
 
-    onEditorStateChange = (editorState) => {
+    onEditorStateChange = (content) => {
         this.setState({
-            editorState,
+            content,
         });
+        this.props.onUpdate(draftToHtml(convertToRaw(content.getCurrentContent())));
     };
 
     render(){
         return(
             <div className={"settings-container"}>
                 <Editor
-                    editorState={this.state.editorState}
+                    editorState={this.state.content}
                     wrapperClassName="demo-wrapper"
-                    editorClassName="demo-editor"
+                    editorClassName="wysiwyg-text-area"
                     onEditorStateChange={this.onEditorStateChange}
                 />
             </div>
@@ -30,4 +33,4 @@ class FormWYSIWYG extends Component {
     }
 }
 
-export default FormWYSIWYG;
+export default WYSIWYG;

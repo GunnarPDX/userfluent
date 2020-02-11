@@ -1,5 +1,5 @@
 import "./auth.scss";
-import '../../views/forms.scss'
+import '../forms/forms.scss'
 import React, { Component } from 'react';
 import LoadingButton from '../loader/LoadingButton';
 import { runValidityCheck } from '../helpers/InputVerification'

@@ -1,5 +1,5 @@
 import './profile.scss';
-import '../forms.scss';
+import '../../components/forms/forms.scss';
 import '../../components/loader/submitButtons.scss';
 import React, { Component } from 'react';
 import Dropzone from "react-dropzone";

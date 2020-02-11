@@ -42,6 +42,6 @@ class CategorySelect extends Component {
             </div>
         )
     }
-};
+}
 
 export default CategorySelect;

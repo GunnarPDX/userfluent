@@ -1,4 +1,4 @@
-import "../forms.scss";
+import "../../components/forms/forms.scss";
 import React, { Component } from 'react'
 import Dropzone from "react-dropzone";
 import axios from 'axios';
@@ -6,7 +6,7 @@ import LoadingButton from "../../components/loader/LoadingButton";
 import CategorySelect from "../../components/forms/CategorySelect";
 import PlatformSelect from "../../components/forms/PlatformSelect";
 
-import FormWYSIWYG from "../../components/wysiwyg/FormWYSIWYG";
+import WYSIWYG from "../../components/forms/WYSIWYG";
 
 class NewPost extends Component {
 
@@ -49,16 +49,23 @@ class NewPost extends Component {
         );
     };
 
-  handleChange = (e) => {
+    handleChange = (e) => {
       let newValue = e.target.value;
       let key = e.target.name;
       this.setState({
           [key]: newValue,
           loading: 'false'
       });
-  };
+    };
 
-  handleSubmit = (e) => {
+    contentUpdate = (data) => {
+        this.setState({
+            content: data,
+        });
+        //console.log(data);
+    };
+
+    handleSubmit = (e) => {
       e.preventDefault();
       this.setState({loading: 'true'});
 
@@ -93,13 +100,13 @@ class NewPost extends Component {
                       currentComponent.props.history.push('/');
                   });
           });
-  };
+    };
 
-  contentBoxStyle = {
+    contentBoxStyle = {
       width: '90%',
-  };
+    };
 
-  render() {
+    render() {
       let props = {
           loading: this.state.loading,
           form: 'new-post-form',
@@ -148,14 +155,16 @@ class NewPost extends Component {
                       </div>
                   </div>
 
+                  {/*
                   <div className={"settings-container"}>
                       <div className={"form-row"}>
                           <label htmlFor="content" className={"form-field-title"}>Content </label>
                           <textarea name="content" id="" cols="30" rows="10" onChange={this.handleChange} className="settings-bio-text-area form-right"/>
                       </div>
                   </div>
+                  */}
 
-                  <FormWYSIWYG/>
+                  <WYSIWYG onUpdate={(data) => {this.contentUpdate(data)}}/>
 
               </form>
 
@@ -166,7 +175,7 @@ class NewPost extends Component {
 
           </div>
       )
-  }
+    }
 }
 
 export default NewPost
