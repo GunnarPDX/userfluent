@@ -1,4 +1,5 @@
 import "./forms.scss";
+import './wysiwyg.scss';
 import React, { Component } from 'react'
 
 import { Editor } from 'react-draft-wysiwyg';
