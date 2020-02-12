@@ -5,6 +5,7 @@ import axios from 'axios';
 import LoadingButton from "../../components/loader/LoadingButton";
 import CategorySelect from "../../components/forms/CategorySelect";
 import PlatformSelect from "../../components/forms/PlatformSelect";
+import PackageSelect from "../../components/forms/PackageSelect";
 
 import WYSIWYG from "../../components/forms/WYSIWYG";
 
@@ -117,6 +118,10 @@ class NewPost extends Component {
           <div className={"uf-fade-in"}>
               <div className={"content-spacer"}/>
 
+              <div className={'form-row-title'}>
+                  Add a cover photo
+              </div>
+
               <div className={"settings-container"}>
                   <Dropzone onDrop={this.onDrop}>
                       {({getRootProps, getInputProps}) => (
@@ -140,6 +145,27 @@ class NewPost extends Component {
 
               <form onSubmit={this.handleSubmit.bind(this)} id={"new-post-form"}>
 
+                  <div className={'form-row-title'}>
+                    Add Your App's Name
+                  </div>
+
+                  <div className={"settings-container"}>
+                      <div className={"form-row"}>
+                          {/*<label htmlFor="title" className={"form-field-title"}>Title </label>*/}
+                          <input type="text" name="title" onChange={this.handleChange} placeholder={'App Name ...'} className={"uf-form-field-full"}/>
+                      </div>
+                  </div>
+
+                  <div className={'form-row-title'}>
+                      Tell Us About Your App
+                  </div>
+
+                  <WYSIWYG onUpdate={(data) => {this.contentUpdate(data)}}/>
+
+                  <div className={'form-row-title'}>
+                      Categorize Your App
+                  </div>
+
                   <div className={"settings-container"}>
                       <CategorySelect onSelect={this.handleChange}/>
                   </div>
@@ -148,23 +174,16 @@ class NewPost extends Component {
                       <PlatformSelect onSelect={this.handleChange}/>
                   </div>
 
-                  <div className={"settings-container"}>
-                      <div className={"form-row"}>
-                          <label htmlFor="title" className={"form-field-title"}>Title </label>
-                          <input type="text" name="title" onChange={this.handleChange} className={"uf-form-field form-right"}/>
-                      </div>
+                  <div className={'form-row-title'}>
+                      Select Packages
                   </div>
 
-                  {/*
-                  <div className={"settings-container"}>
-                      <div className={"form-row"}>
-                          <label htmlFor="content" className={"form-field-title"}>Content </label>
-                          <textarea name="content" id="" cols="30" rows="10" onChange={this.handleChange} className="settings-bio-text-area form-right"/>
-                      </div>
-                  </div>
-                  */}
+                  <PackageSelect/>
 
-                  <WYSIWYG onUpdate={(data) => {this.contentUpdate(data)}}/>
+                  <div className={'form-row-title'}>
+                      User Agreement
+                  </div>
+
 
               </form>
 

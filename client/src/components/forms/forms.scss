@@ -149,10 +149,34 @@
   font-size: 12pt;
 }
 
+.uf-form-field-full {
+  width: 100%;
+  min-width: 300px;
+  padding: 12px 20px;
+  margin: 0;
+  display: inline-block;
+  border: 1px solid #DBDBDB;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 12pt;
+}
+
 .form-row {
   width: 100%;
   display: flex;
   align-items: center;
+}
+
+.form-row-title {
+  width: 100%;
+  min-width: 300px;
+  padding: 10px;
+  margin: 0;
+  display: inline-block;
+
+  color: #bcbcbc;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .form-right {

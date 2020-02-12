@@ -9,7 +9,6 @@ import PostLike from './components/PostLike'
 import DestroyPost from './components/DestroyPost'
 import DestroyComment from "./components/DestroyComment";
 import axios from "axios";
-import DisplayWYSIWYG from "../../components/forms/DisplayWYSIWYG";
 
 class ShowPost extends Component {
 
