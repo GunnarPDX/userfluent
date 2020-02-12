@@ -132,8 +132,8 @@
   padding: 12px 20px;
   height: 150px;
   resize:none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #DBDBDB;
+  border-radius: 3px;
   background-color: #ffffff;
 }
 
@@ -143,8 +143,8 @@
   padding: 12px 20px;
   margin: 0;
   display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #DBDBDB;
+  border-radius: 3px;
   box-sizing: border-box;
   font-size: 12pt;
 }
@@ -183,9 +183,9 @@
   width: 100%;
   min-width: 300px;
   padding: 0 20px;
-  height: 200px !important;
+  min-height: 200px !important;
   resize:none;
-  border: 1px solid #ccc;
+  border: 1px solid #DBDBDB;
   border-radius: 4px;
   background-color: #ffffff;
 }

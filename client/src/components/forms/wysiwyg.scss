@@ -1,4 +1,14 @@
 
+.rdw-editor-toolbar{
+  border: 1px solid #DBDBDB;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.rdw-option-active {
+  background-color: #DBDBDB;
+}
+
 code {
   background-color: #dddddd;
   color: #ed2958;
@@ -7,24 +17,32 @@ code {
 }
 
 pre {
-  background-color:  #EDAB6D;
-  padding: 3px;
+  background-color: #f2f2f2;
+  padding: 8px;
   border-radius: 3px;
   text-decoration: none;
 
   span {
-    background-color:  #EDAB6D !important;
-    color: #373737;
+    background-color: #f2f2f2 !important;
+    color: #373737 !important;
   }
 }
 
-span {
-  background-color: inherit;
+.rdw-dropdown-selectedtext {
+  color: #373737;
+  text-decoration: none;
+
+  &:hover {
+    color: #373737;
+    text-decoration: none;
+  }
 }
 
-a {
-  span {
-    color: #6c3516 !important;
-    text-decoration: underline;
+.rdw-link-decorator-wrapper {
+  a {
+    span {
+      color: #56e0c3 !important;
+      text-decoration: underline;
+    }
   }
 }

@@ -126,9 +126,9 @@ class ShowPost extends Component {
                         <div className={"comment-info-container"}>
                             <div className="comment-text-info">By: {comment.user_name}</div>
                             <div className={"comment-dropdown"}>
-                                <Link to={'/'} className={"comment-info-ellipsis"}>
+                                <div className={"comment-info-ellipsis"}>
                                     <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1579927642/UserFluent/post-icons/ellip-light-grey_exego5.svg"} alt={"ellipsis"} className={""}/>
-                                </Link>
+                                </div>
                                 <div className="comment-dropdown-content">
                                     <button className={'button is-small comment-dropdown-button'}>flag</button>
                                     <br/>

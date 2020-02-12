@@ -35,7 +35,20 @@ class WYSIWYG extends Component {
                         component: undefined,
                         dropdownClassName: undefined,
                         options: ['bold', 'underline', 'strikethrough', 'monospace'],
-                        }
+                        },
+                        blockType: {
+                            inDropdown: true,
+                            options: ['Normal', 'Blockquote', 'Code'],
+                            className: undefined,
+                            component: undefined,
+                            dropdownClassName: undefined,
+                        },
+                        fontSize: {
+                            options: [14, 16, 18, 24, 30, 36],
+                            className: undefined,
+                            component: undefined,
+                            dropdownClassName: undefined,
+                        },
                     }}
                 />
             </div>
