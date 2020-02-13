@@ -2,12 +2,15 @@
 .arrow_box {
   position: absolute;
   top: 4rem;
+  left: 15rem;
   z-index: 2;
 
   display: block;
   overflow: visible;
 
   background: #FF5251;
+  color: #FFFFFF;
+  font-weight: bold;
   border-radius: 0.5rem;
   padding: 0.5rem 0;
 

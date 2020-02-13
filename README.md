@@ -60,7 +60,7 @@ Written by C. Gunnar Rosenberg <gunnarrosenberg@gmail.com>, Jan 1st 2020
 
 # To-Dos
 #### Percent completed till launch 
-[5/60] |=====-------------------------------------------------------| %
+[5/60] |=======-------------------------------------------------------| %
 ### Removed
 - [x] Old tasks... (removed these to condense this list)
 ### Discover index
@@ -70,14 +70,19 @@ Written by C. Gunnar Rosenberg <gunnarrosenberg@gmail.com>, Jan 1st 2020
 - [x] Add WYSIWYG form to 'new post'
 - [x] Load WYSIWYG in 'show post'
 - [ ] Finish WYSIWYG styling
+### 404
+- [ ] Add 404 page
+### Comments
+- [ ] Add comments!
 ### Pricing and Product-Packages
-- [ ] Add packages/pricing to form
+- [x] Add packages/pricing to form
+- [x] Add Add Ons to form
 - [ ] Add 'public pricing' page
 ### Write tests
 - [ ] Make tests for models !!!
 ### Auth Tokens
 - [ ] Make tokens update every API call
-### Custom Form Builder
+### Custom Form Builder ?
 - [ ] Create custom form builder for 'new post'
 - [ ] Create form page for testers that is submittable
 - [ ] Create design crit tools for tester

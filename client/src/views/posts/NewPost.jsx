@@ -6,8 +6,8 @@ import LoadingButton from "../../components/loader/LoadingButton";
 import CategorySelect from "../../components/forms/CategorySelect";
 import PlatformSelect from "../../components/forms/PlatformSelect";
 import PackageSelect from "../../components/forms/PackageSelect";
-
 import WYSIWYG from "../../components/forms/WYSIWYG";
+import AddOnSelect from "../../components/forms/AddOnSelect";
 
 class NewPost extends Component {
 
@@ -111,7 +111,7 @@ class NewPost extends Component {
       let props = {
           loading: this.state.loading,
           form: 'new-post-form',
-          button_title: 'Submit New Post!',
+          button_title: 'Submit New Project!',
       };
 
       return (
@@ -122,12 +122,14 @@ class NewPost extends Component {
                   Add a cover photo
               </div>
 
-              <div className={"settings-container"}>
+              <div className={"new-post-container"}>
                   <Dropzone onDrop={this.onDrop}>
                       {({getRootProps, getInputProps}) => (
                           <section>
                               <div {...getRootProps()} className={"dropzone"}>
                                   <input {...getInputProps()} />
+
+                                  <img src={''} alt={"current photo"} className={"avatar-dropzone-underlay"}/>
 
                                   <div className={"dropzone-text"}>
                                       Drag and drop some files here, or click to select files.
@@ -149,7 +151,7 @@ class NewPost extends Component {
                     Add Your App's Name
                   </div>
 
-                  <div className={"settings-container"}>
+                  <div className={"new-post-container"}>
                       <div className={"form-row"}>
                           {/*<label htmlFor="title" className={"form-field-title"}>Title </label>*/}
                           <input type="text" name="title" onChange={this.handleChange} placeholder={'App Name ...'} className={"uf-form-field-full"}/>
@@ -166,11 +168,11 @@ class NewPost extends Component {
                       Categorize Your App
                   </div>
 
-                  <div className={"settings-container"}>
+                  <div className={"new-post-container"}>
                       <CategorySelect onSelect={this.handleChange}/>
                   </div>
 
-                  <div className={"settings-container"}>
+                  <div className={"new-post-container"}>
                       <PlatformSelect onSelect={this.handleChange}/>
                   </div>
 
@@ -181,16 +183,31 @@ class NewPost extends Component {
                   <PackageSelect/>
 
                   <div className={'form-row-title'}>
+                      Additional Services
+                  </div>
+
+                  <AddOnSelect/>
+
+                  <div className={'form-row-title'}>
                       User Agreement
+                  </div>
+
+                  <div className={"new-post-container"}>
+                      user agreement
+                  </div>
+
+                  <div className={'form-row-title'}>
+                      All Done?
                   </div>
 
 
               </form>
 
-              <div className={"settings-container"}>
+              <div className={"new-post-container"}>
                   <LoadingButton {...props}/>
               </div>
 
+              {/* <DropAlert/> */}
 
           </div>
       )

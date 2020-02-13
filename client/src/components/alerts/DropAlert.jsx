@@ -4,7 +4,7 @@ import React from 'react'
 const Row = (props) => {
     return (
         <div className={'arrow-box-row'}>
-            <img src={props.icon} alt={'alert-icon'}/>
+            <img src={props.icon} alt={props.description}/>
             <p>{props.config}</p>
         </div>
     );

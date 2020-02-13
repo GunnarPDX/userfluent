@@ -22,7 +22,7 @@ class WYSIWYG extends Component {
 
     render(){
         return(
-            <div className={"settings-container"}>
+            <div className={"new-post-container"}>
                 <Editor
                     editorState={this.state.content}
                     wrapperClassName="demo-wrapper"
