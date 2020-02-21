@@ -79,6 +79,7 @@ Written by C. Gunnar Rosenberg <gunnarrosenberg@gmail.com>, Jan 1st 2020
 - [x] Add Add Ons to form
 - [ ] Add 'public pricing' page
 ### Write tests
+- [ ] Make new post form redirect to post
 - [ ] Make tests for models !!!
 ### Auth Tokens
 - [ ] Make tokens update every API call

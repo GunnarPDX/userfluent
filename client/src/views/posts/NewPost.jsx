@@ -119,7 +119,7 @@ class NewPost extends Component {
               <div className={"content-spacer"}/>
 
               <div className={'form-row-title'}>
-                  Add a cover photo
+                  Add A Cover Photo
               </div>
 
               <div className={"new-post-container"}>
@@ -129,7 +129,7 @@ class NewPost extends Component {
                               <div {...getRootProps()} className={"dropzone"}>
                                   <input {...getInputProps()} />
 
-                                  <img src={''} alt={"current photo"} className={"avatar-dropzone-underlay"}/>
+                                  <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1582263843/UserFluent/add-photo_ydpkg5.png'} alt={"add a photo"} className={"dropzone-underlay"}/>
 
                                   <div className={"dropzone-text"}>
                                       Drag and drop some files here, or click to select files.

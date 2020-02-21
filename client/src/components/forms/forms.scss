@@ -58,6 +58,15 @@
   cursor: pointer;
 }
 
+
+.dropzone-underlay {
+  position:absolute;
+  height: 400px;
+  opacity: .3;
+  margin-left: -3px;
+}
+
+
 .post-image-upload-overlay {
   position:absolute;
   object-fit: contain;
