@@ -142,6 +142,16 @@
 
   border-radius: 3px;
   border: 1px solid #DBDBDB;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #E9F0FE;
+  }
+}
+
+.option-selected {
+  background-color: #E9F0FE !important;
 }
 
 .add-on-1 {

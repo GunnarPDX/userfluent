@@ -14,6 +14,7 @@ class NewPost extends Component {
 
     state = {
         title: '',
+        link: '',
         content: '',
         image: '',
         category: '',
@@ -89,6 +90,7 @@ class NewPost extends Component {
               axios.post('/api/v1/posts',
                   {post: { title: currentComponent.state.title,
                           content: currentComponent.state.content,
+                          link: currentComponent.state.link,
                           image: currentComponent.state.image,
                           category: currentComponent.state.category,
                           platform: currentComponent.state.platform,}},
@@ -119,7 +121,7 @@ class NewPost extends Component {
           <div className={"uf-fade-in"}>
 
               <div className={'top-banner'}>
-                  <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1579749006/UserFluent/illustrations/Welcome._a5fzcl.svg'} alt={'Welcome'} className={'welcome-image'}/>
+                  <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1582445518/UserFluent/Let_s_find_out_what_the_users_think_aehr3j.svg'} alt={'lets find out wat the users think'} className={'banner-image'}/>
               </div>
 
               <div className={"content-spacer"}/>

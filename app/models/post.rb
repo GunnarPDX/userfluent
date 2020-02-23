@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments, dependent: :destroy
 
-  validates :title, :content, :image, presence: true
+  validates :title, :content, :image, :link, :category, :platform, presence: true
 
   is_impressionable
   acts_as_votable

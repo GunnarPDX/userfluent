@@ -160,7 +160,7 @@ module Api::V1
     end
 
     def post_params
-      params.require(:post).permit(:title, :image, :content, :category, :platform)
+      params.require(:post).permit(:title, :image, :link, :content, :category, :platform)
     end
 
   end
