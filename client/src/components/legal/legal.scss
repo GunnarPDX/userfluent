@@ -13,4 +13,20 @@
   color: #1a6fbf;
   font-weight: bold;
   cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.terms-text {
+  font-size: 20px;
+  height: 34px;
+  line-height: 34px;
+}
+
+.toggle-row {
+  display: flex;
+  justify-content: left;
+  align-content: center;
+  //flex-direction: column;
 }

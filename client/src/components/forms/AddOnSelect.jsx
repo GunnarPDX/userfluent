@@ -24,6 +24,7 @@ class AddOnSelect extends Component {
                                 </p>
                             </div>
                         </div>
+                        {/*
                         <div className={''}>
                             <div className={''}>
                                 Lorem Ipsum
@@ -35,6 +36,7 @@ class AddOnSelect extends Component {
                                 Lorem Ipsum
                             </div>
                         </div>
+                        */}
 
                     </div>
                     <div className={'add-on-container add-on-2'}>
@@ -50,6 +52,7 @@ class AddOnSelect extends Component {
                                 </p>
                             </div>
                         </div>
+                        {/*
                         <div className={''}>
                             <div className={''}>
                                 Lorem Ipsum
@@ -61,6 +64,7 @@ class AddOnSelect extends Component {
                                 Lorem Ipsum
                             </div>
                         </div>
+                        */}
 
                     </div>
                     <div className={'add-on-container add-on-3'}>
@@ -75,6 +79,7 @@ class AddOnSelect extends Component {
                                     <span className={'plan-price-sm'}>.99</span>
                                 </p>
                             </div>
+                            {/*
                             <div className={''}>
                                 <div className={''}>
                                     Lorem Ipsum
@@ -86,6 +91,7 @@ class AddOnSelect extends Component {
                                     Lorem Ipsum
                                 </div>
                             </div>
+                            */}
 
                         </div>
 

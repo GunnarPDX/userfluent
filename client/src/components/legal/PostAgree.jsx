@@ -23,9 +23,25 @@ class PostAgree extends Component {
 
                 <CustomerTermsOfService show={this.state.show}/>
 
-                <p>
-                    <input type={'checkbox'}/> I agree to the <span onClick={this.showTerms} className={'terms-link'}> terms of service.</span>
-                </p>
+
+                <div className={'toggle-row'}>
+
+                    <div className="toggle-switch">
+                        <input type="checkbox" className="toggle-switch-checkbox" name="toggleSwitch" id="toggleSwitch"/>
+                        <label className="toggle-switch-label" htmlFor="toggleSwitch">
+                            <span className="toggle-switch-inner"></span>
+                            <span className="toggle-switch-switch"></span>
+                        </label>
+                    </div>
+
+                    <span className={'terms-text'}>
+                    &nbsp;&nbsp; I agree to the:&nbsp;
+                    <span onClick={this.showTerms} className={'terms-link terms-text'}>
+                        terms of service.
+                    </span>
+                    </span>
+
+                </div>
 
             </div>
         )
