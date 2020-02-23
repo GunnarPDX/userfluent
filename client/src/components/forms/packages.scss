@@ -151,7 +151,10 @@
 }
 
 .option-selected {
-  background-color: #E9F0FE !important;
+  background-color: #e1e8f6 !important;
+  &:hover {
+    background-color: #E3EAF8;
+  }
 }
 
 .add-on-1 {

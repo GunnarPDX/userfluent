@@ -19,9 +19,9 @@ class AddOnSelect extends Component {
     setPackage = (option) => {
         this.setState({
             package: option,
-            option1: (option === 1),
-            option2: (option === 2),
-            option3: (option === 3),
+            option1: (option === 1) ? !this.state.option1 : this.state.option1,
+            option2: (option === 2) ? !this.state.option2 : this.state.option2,
+            option3: (option === 3) ? !this.state.option3 : this.state.option3,
         });
 
     };
