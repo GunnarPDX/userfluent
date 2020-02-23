@@ -8,6 +8,7 @@ import PlatformSelect from "../../components/forms/PlatformSelect";
 import PackageSelect from "../../components/forms/PackageSelect";
 import WYSIWYG from "../../components/forms/WYSIWYG";
 import AddOnSelect from "../../components/forms/AddOnSelect";
+import PostAgree from "../../components/legal/PostAgree";
 
 class NewPost extends Component {
 
@@ -98,7 +99,7 @@ class NewPost extends Component {
                   })
                   .then(resp => {
                       currentComponent.setState({loading: 'success'});
-                      currentComponent.props.history.push('/');
+                      currentComponent.props.history.push('/'); // 'post/' + resp.data.id
                   });
           });
     };
@@ -116,7 +117,16 @@ class NewPost extends Component {
 
       return (
           <div className={"uf-fade-in"}>
+
+              <div className={'top-banner'}>
+                  <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1579749006/UserFluent/illustrations/Welcome._a5fzcl.svg'} alt={'Welcome'} className={'welcome-image'}/>
+              </div>
+
               <div className={"content-spacer"}/>
+
+              <div>
+                  <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1582347785/UserFluent/user-testing-illustration_hoitys.svg'} alt={'testing'}/>
+              </div>
 
               <div className={'form-row-title'}>
                   Add A Cover Photo
@@ -153,8 +163,17 @@ class NewPost extends Component {
 
                   <div className={"new-post-container"}>
                       <div className={"form-row"}>
-                          {/*<label htmlFor="title" className={"form-field-title"}>Title </label>*/}
                           <input type="text" name="title" onChange={this.handleChange} placeholder={'App Name ...'} className={"uf-form-field-full"}/>
+                      </div>
+                  </div>
+
+                  <div className={'form-row-title'}>
+                      Add A Link To Your App
+                  </div>
+
+                  <div className={"new-post-container"}>
+                      <div className={"form-row"}>
+                          <input type="text" name="link" onChange={this.handleChange} placeholder={'www.your-app.com ...'} className={"uf-form-field-full"}/>
                       </div>
                   </div>
 
@@ -193,7 +212,7 @@ class NewPost extends Component {
                   </div>
 
                   <div className={"new-post-container"}>
-                      user agreement
+                      <PostAgree/>
                   </div>
 
                   <div className={'form-row-title'}>

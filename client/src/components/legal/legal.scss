@@ -1,0 +1,16 @@
+.terms-container-body {
+  height: 200px;
+  padding: 5px;
+  margin: 5px;
+  overflow-y: scroll;
+
+  text-align: justify;
+  border: 1px solid #DBDBDB;
+  border-radius: 3px;
+}
+
+.terms-link {
+  color: #1a6fbf;
+  font-weight: bold;
+  cursor: pointer;
+}
