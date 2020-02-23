@@ -97,11 +97,13 @@ class NewPost extends Component {
                   {headers: {'Content-Type': 'application/json', 'access-token': token, 'client': client, 'uid': uid}}
               )
                   .then(resp => {
-                      console.log(resp);
+                      //console.log(resp);
+                      return resp; // resp.json()
                   })
                   .then(resp => {
                       currentComponent.setState({loading: 'success'});
-                      currentComponent.props.history.push('/'); // 'post/' + resp.data.id
+                      //console.log(resp.data.id);
+                      currentComponent.props.history.replace('/show/post/' + resp.data.id); // navigate to new post
                   });
           });
     };
