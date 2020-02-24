@@ -44,18 +44,21 @@ class AddOnSelect extends Component {
                                     <span className={'plan-price-sm'}>.99</span>
                                 </p>
                             </div>
+
+                            <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1582510598/UserFluent/accessability-icon_nbtbvr.svg'} alt={'accessability'} className={'add-on-icon'}/>
+
                             {/*
-                        <div className={''}>
                             <div className={''}>
-                                Lorem Ipsum
+                                <div className={''}>
+                                    Lorem Ipsum
+                                </div>
+                                <div className={''}>
+                                    Lorem Ipsum
+                                </div>
+                                <div className={''}>
+                                    Lorem Ipsum
+                                </div>
                             </div>
-                            <div className={''}>
-                                Lorem Ipsum
-                            </div>
-                            <div className={''}>
-                                Lorem Ipsum
-                            </div>
-                        </div>
                         */}
                         </div>
                     </div>
@@ -72,6 +75,9 @@ class AddOnSelect extends Component {
                                     <span className={'plan-price-sm'}>.99</span>
                                 </p>
                             </div>
+
+                            <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1582510604/UserFluent/performance-icon_yqzrfd.svg'} alt={'accessability'} className={'add-on-icon'}/>
+
                             {/*
                         <div className={''}>
                             <div className={''}>
@@ -100,6 +106,9 @@ class AddOnSelect extends Component {
                                     <span className={'plan-price-sm'}>.99</span>
                                 </p>
                             </div>
+
+                            <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1582510611/UserFluent/seo-icon_ackfge.svg'} alt={'accessability'} className={'add-on-icon'}/>
+
                             {/*
                             <div className={''}>
                                 <div className={''}>
