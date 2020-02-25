@@ -60,7 +60,7 @@ Written by C. Gunnar Rosenberg <gunnarrosenberg@gmail.com>, Jan 1st 2020
 
 # To-Dos
 #### Percent completed till launch 
-[5/60] |=======-------------------------------------------------------| %
+[10/63] |==========-----------------------------------------------------| %
 ### Removed
 - [x] Old tasks... (removed these to condense this list)
 ### Discover index
@@ -69,17 +69,19 @@ Written by C. Gunnar Rosenberg <gunnarrosenberg@gmail.com>, Jan 1st 2020
 ### WYSIWYG form
 - [x] Add WYSIWYG form to 'new post'
 - [x] Load WYSIWYG in 'show post'
-- [ ] Finish WYSIWYG styling
+- [x] Finish WYSIWYG styling
 ### 404
 - [ ] Add 404 page
 ### Comments
 - [ ] Add comments!
+### Input Validation
+- [ ] Add input validation to new post form -> ensure all fields are filled
 ### Pricing and Product-Packages
 - [x] Add packages/pricing to form
 - [x] Add Add Ons to form
 - [ ] Add 'public pricing' page
 ### Write tests
-- [ ] Make new post form redirect to post
+- [x] Make new post form redirect to post
 - [ ] Make tests for models !!!
 ### Auth Tokens
 - [ ] Make tokens update every API call
@@ -93,7 +95,7 @@ Written by C. Gunnar Rosenberg <gunnarrosenberg@gmail.com>, Jan 1st 2020
 - [ ] Create stylish landing
 - [ ] Add new nav to home
 ### User Agreements
-- [ ] Add 'user agreement' component
+- [x] Add 'user agreement' component
 - [ ] Add legal boilerplate for registration and products
 ### Account Improvements
 - [ ] Add tester/developer to user accounts
@@ -128,11 +130,12 @@ Written by C. Gunnar Rosenberg <gunnarrosenberg@gmail.com>, Jan 1st 2020
 - [ ] Change image ratios to better ones
 ### Image hosting
 - [ ] Migrate to imagekit from cloudinary
+- [ ] Add SVG library to frontend app
 ### Add Mailer
 - [ ] Add mailer
 - [ ] Account verification
 ### Write tests
-- [ ] Make tests for models !!!
+- [ ] Make more tests for models !!!
 ### Integrate Payments
 - [ ] Stripe payments?
 - [ ] Payment page? devs and users
