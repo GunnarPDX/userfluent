@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
 
-      resources :demo, only: %i[index]
-
       mount_devise_token_auth_for 'User', at: 'auth'
 
       resources :posts, only: %i[index create show destroy] do
@@ -14,12 +12,15 @@ Rails.application.routes.draw do
           put '/like/:id', to: 'posts#like'
         end
       end
+
       resources :user, only: %i[index update] do
         collection do
           get '/user_info', to: 'user#user_info'
         end
       end
+
       resources :comments, only: %i[create destroy]
+
       resources :users, only: %i[show] do
         collection do
           get '/user_info/:id', to: 'users#user_info'
@@ -32,4 +33,5 @@ Rails.application.routes.draw do
   get '*path', to: 'application#fallback_index_html', constraints: lambda { |request|
     !request.xhr? && request.format.html?
   }
+
 end

@@ -71,7 +71,7 @@ Written by C. Gunnar Rosenberg <gunnarrosenberg@gmail.com>, Jan 1st 2020
 - [x] Load WYSIWYG in 'show post'
 - [x] Finish WYSIWYG styling
 ### 404
-- [ ] Add 404 page
+- [ ] Finish 404 page
 ### Comments
 - [ ] Add comments!
 ### Input Validation
