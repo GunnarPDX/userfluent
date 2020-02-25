@@ -1,0 +1,42 @@
+.landing-header-container {
+  padding: 20px 30px;
+  width: 100vw;
+  height: 100vh;
+  float: left;
+}
+
+.landing-header {
+  font-size: 80pt;
+  text-align: left;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  color: #373737;
+}
+
+
+
+//---
+
+.vertical-line {
+  height: 1700px;
+  border-left: 1px solid #e8e8e8;
+}
+
+.right-line {
+  border-right: 1px solid #e8e8e8;
+}
+
+.backdrop-text-block{
+  transform: translateZ(-10px);
+  z-index: -10;
+  height: 1700px;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  padding-left: 50px;
+  padding-right: 50px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
