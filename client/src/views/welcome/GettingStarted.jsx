@@ -1,9 +1,19 @@
 
+// GettingStarted is the landing page for new users, this view
+// will help users get started by offering a brief tutorial and
+// prompting them to fill out some useful info.
+
+
 import './welcome.scss'
+
 import React, { Component } from 'react'
-import ProfileSettings from "../user/ProfileSettings";
-import Tutorial from "../static/Tutorial";
 import { Link } from 'react-router-dom';
+
+// ProfileSettings contains the form for adding/updating the users profile
+import ProfileSettings from "../user/ProfileSettings";
+
+// Tutorial contains the app usage instructions
+import Tutorial from "../static/Tutorial";
 
 class GettingStarted extends Component {
 
