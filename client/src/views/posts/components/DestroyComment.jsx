@@ -1,3 +1,6 @@
+
+// Allows users to delete their own comments
+
 import React, { Component } from 'react'
 import axios from "axios";
 

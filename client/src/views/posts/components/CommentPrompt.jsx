@@ -1,6 +1,11 @@
+
+// CommentPrompt is a comment form component.
+
 import React, { Component } from 'react'
-import LoadingButton from "../../../components/loader/LoadingButton";
 import axios from "axios";
+
+// LoadingButton is a submission button component with a fancy animation
+import LoadingButton from "../../../components/loader/LoadingButton";
 
 class CommentPrompt extends Component {
 
@@ -10,6 +15,7 @@ class CommentPrompt extends Component {
         loading: 'false',
     };
 
+    // Handle form changes by updating the state
     handleChange = e => {
         let newValue = e.target.value;
         let key = e.target.name;

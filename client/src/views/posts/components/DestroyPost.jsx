@@ -1,3 +1,6 @@
+
+// Allows users to delete their own posts.
+
 import React, { Component } from 'react'
 import axios from "axios";
 
@@ -5,12 +8,9 @@ class DestroyPost extends Component {
 
     constructor(props) {
         super(props);
-        let bool = false;
-        if(this.props.owner === 'true'){
-            bool = true;
-        }
+
         this.state = {
-            owner: bool,
+            owner: (this.props.owner === 'true'),
             post_id: this.props.post_id
         };
         this.handleClick = this.handleClick.bind(this);
@@ -33,12 +33,13 @@ class DestroyPost extends Component {
             },
             redirect: "error"
         })
-            .then(res => res)
             .then(res => {
+                // Redirect to root since post is gone now
                 this.props.history.push('/')
             });
     }
 
+    // Only display if the user is the owner of the post, obviously this is also validated on the backend like everything else
     render() {
         if(this.state.owner) {
             return (
@@ -47,9 +48,7 @@ class DestroyPost extends Component {
                 </div>
             )
         }
-        else{
-            return null
-        }
+        else return null;
     }
 
 }
