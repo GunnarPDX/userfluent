@@ -37,6 +37,8 @@ import GettingStarted from './views/welcome/GettingStarted';
 import NotFound from "./views/static/errors/NotFound";
 
 
+// NOTE make ShowPost and ShowProfile routes: /post/:id and /user/:id
+
 function App() {
   return (
       <Router>
@@ -46,12 +48,12 @@ function App() {
 
             <Switch>
 
-                <Route exact path="/" component={PostIndex} />
-                <Route exact path="/posts/new" component={NewPost} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/profile/settings" component={ProfileSettings}/>
-                <Route exact path="/show/post/:id" component={ShowPost} />
-                <Route exact path="/show/userprofile/:id" component={ShowProfile} />
+                <Route exact path={'/'} component={PostIndex} />
+                <Route exact path={'/posts/new'} component={NewPost} />
+                <Route exact path={'/about'} component={About} />
+                <Route exact path={'/profile/settings'} component={ProfileSettings}/>
+                <Route exact path={'/show/post/:id'} component={ShowPost} />
+                <Route exact path={'/show/userprofile/:id'} component={ShowProfile} />
                 <Route exact path={'/welcome'} component={GettingStarted}/>
 
                 <Route component={NotFound}/>

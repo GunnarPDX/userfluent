@@ -1,14 +1,25 @@
+
+// ShowPost shows an individual project.
+
 import "../posts.scss";
 import "./showpost.scss";
 import "../../../components/forms/wysiwyg/wysiwyg.scss"
 
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import CommentPrompt from '../components/CommentPrompt'
-import PostLike from '../components/PostLike'
-import DestroyPost from '../components/DestroyPost'
-import DestroyComment from "../components/DestroyComment";
 import axios from "axios";
+
+// CommentPrompt is a comment component.
+import CommentPrompt from '../components/CommentPrompt'
+
+// PostLike is a likes component that allows you to like a post
+import PostLike from '../components/PostLike'
+
+// DestroyPost allows you to delete a comment
+import DestroyPost from '../components/DestroyPost'
+
+// DestroyComment allows you to delete a comment
+import DestroyComment from "../components/DestroyComment";
 
 class ShowPost extends Component {
 
@@ -21,6 +32,7 @@ class ShowPost extends Component {
     }
 
     componentDidMount() {
+        // pass in auth info from local storage
         const token = localStorage.getItem('access-token');
         const client = localStorage.getItem('client');
         const uid = localStorage.getItem('uid');

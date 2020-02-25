@@ -1,13 +1,30 @@
+// NewPost allows the user to create a new project.
+
 import "../../../components/forms/forms.scss";
+
 import React, { Component } from 'react'
 import Dropzone from "react-dropzone";
 import axios from 'axios';
+
+// LoadingButton is a submission button component with a fancy animation
 import LoadingButton from '../../../components/loader/LoadingButton';
+
+// CategorySelect is a form component dropdown select for categories
 import CategorySelect from "../../../components/forms/fields/CategorySelect";
+
+// PlatformSelect is a form component dropdown for platforms
 import PlatformSelect from "../../../components/forms/fields/PlatformSelect";
+
+// PackageSelect allows the user to select a product type
 import PackageSelect from "../../../components/forms/packages/PackageSelect";
+
+// WYSIWYG - What You See Is What You Get form component
 import WYSIWYG from "../../../components/forms/wysiwyg/WYSIWYG";
+
+// AddOnSelect allows the user to select product add ons
 import AddOnSelect from "../../../components/forms/packages/AddOnSelect";
+
+// PostAgree prompts the user to agree to the terms and conditions
 import PostAgree from "../../../components/legal/PostAgree";
 
 class NewPost extends Component {
@@ -24,8 +41,9 @@ class NewPost extends Component {
         image_preview: null,
     };
 
+    // Handle images on drop
     onDrop = (files) => {
-        window.URL.revokeObjectURL(this.state.image_preview);
+        window.URL.revokeObjectURL(this.state.image_preview); // Revoke old image if present
         this.setState({ image_file: files[0], image_preview: URL.createObjectURL(files[0])  });
         //console.log(this.state.image_file.path);
     };
@@ -33,14 +51,15 @@ class NewPost extends Component {
     showFilePreview() {
         const previewStyle = {
             height: '400px',
+            // NOTE: figure out max width issue
         };
 
         let file = this.state.image_preview || null;
 
-        if (file === null) {
-            return null;
-        }
+        // check for a file
+        if (file === null) return null;
 
+        // If present then display an image preview
         return (
             <div className={"post-image-upload-overlay"}>
                 <img
@@ -52,6 +71,7 @@ class NewPost extends Component {
         );
     };
 
+    // Handle form input update by refreshing the state
     handleChange = (e) => {
       let newValue = e.target.value;
       let key = e.target.name;
@@ -61,6 +81,7 @@ class NewPost extends Component {
       });
     };
 
+    // Handle a content update for wysiwyg?
     contentUpdate = (data) => {
         this.setState({
             content: data,
@@ -68,8 +89,11 @@ class NewPost extends Component {
         //console.log(data);
     };
 
+    // Handle a form submission
     handleSubmit = (e) => {
       e.preventDefault();
+
+      // Set loading button
       this.setState({loading: 'true'});
 
       const { title, content, image_file } = this.state;
@@ -79,6 +103,7 @@ class NewPost extends Component {
       formData.append('file', image_file);
       formData.append('upload_preset', 'r2rutyz6');
 
+      // Upload img to host
       axios.post(`https://api.cloudinary.com/v1_1/dmqtrnawm/image/upload`, formData,)
           .then(function(response) {
               const image = response.data.public_id;

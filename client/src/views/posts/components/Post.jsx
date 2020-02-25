@@ -1,18 +1,24 @@
+
+// This is the component for the post image tiles.
+
 import '../posts.scss';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
-import PostLike from '../components/PostLike';
 import { withRouter } from 'react-router-dom';
 
+// Makes posts likable
+import PostLike from '../components/PostLike';
+
+// This is for handling the link to the individual post - creates a route to the specific post
 function handleShowPost(props) {
     props.history.push('/show/post/' + props.post.id);
 }
 
+// This is for handling the link to the profile
 function handleShowProfile(e, props) {
+    //to stop parent's onClick event (handleShowPost) from triggering
     e.preventDefault();
-    e.stopPropagation(); //to stop lower divs onClick event
-    //e.nativeEvent.stopImmediatePropagation;
-    //e.stopImmediatePropagation();
+    e.stopPropagation();
     props.history.push('/show/userprofile/' + props.post.user.id);
 }
 

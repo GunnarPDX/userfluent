@@ -1,12 +1,12 @@
+
+// PostsNavigation allows the user to select content categories and toggle search rank
+// within the posts index, eg: sort by popular vs recent...
+
 import '../../../components/navigation/navigation.scss'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 class PostsNavigation extends Component {
-
-    /*
-        Add WYSIWYG form to new post
-    */
 
     state = {
         category: '',
@@ -14,6 +14,7 @@ class PostsNavigation extends Component {
         rank: ''
     };
 
+    // Handle search rank toggle
     handleRankChange = (e) => {
         const currentComponent = this;
         this.setState({ rank: e.target.value }, function () {

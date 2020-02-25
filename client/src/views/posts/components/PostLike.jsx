@@ -1,3 +1,6 @@
+
+// PostLike is a likes component which allows the user to like a post
+
 import React, { Component } from 'react'
 import axios from "axios";
 
@@ -16,6 +19,9 @@ class PostLike extends Component {
         const token = localStorage.getItem('access-token');
         const client = localStorage.getItem('client');
         const uid = localStorage.getItem('uid');
+
+        // Fix axios issue??
+
         /*
         axios.put(`/api/v1/posts/like/${this.props.post_id}`, {headers: {'Content-Type': 'application/json', 'access-token': token, 'client': client, 'uid': uid}})
         */

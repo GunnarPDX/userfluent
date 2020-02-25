@@ -1,9 +1,16 @@
+
+// PostsIndex shows all projects.
+
 import "../posts.scss";
 import React, { Component } from 'react'
 import { SpringGrid, makeResponsive } from 'react-stonecutter';
-import PostsNavigation from "../components/PostsNavigation";
-import Post from '../components/Post'
 import axios from "axios";
+
+// PostsNavigation is a component that allows the user to select content categories and toggle search rank
+import PostsNavigation from "../components/PostsNavigation";
+
+// Post is a component for the post image tiles
+import Post from '../components/Post'
 
 const Grid = makeResponsive(SpringGrid, {
     maxWidth: 1920,
@@ -41,6 +48,7 @@ class PostIndex extends Component {
           });
   }
 
+  // Reload the index after content category/rank change or search
   reloadIndex = () => {
       const token = localStorage.getItem('access-token');
       const client = localStorage.getItem('client');
@@ -61,6 +69,7 @@ class PostIndex extends Component {
           });
   };
 
+  // Handle next page action
   handleNext = () => {
       if(this.state.page < this.state.pagy.pages){
           const currentComponent = this;
@@ -72,6 +81,7 @@ class PostIndex extends Component {
       }
   };
 
+  // Handle previous page action
   handlePrevious = () => {
       if(this.state.page > 1){
           const currentComponent = this;
@@ -83,6 +93,7 @@ class PostIndex extends Component {
       }
   };
 
+  // Handle platform category change
   handlePlatform = (platform) => {
       const currentComponent = this;
       this.setState({
@@ -93,6 +104,7 @@ class PostIndex extends Component {
       });
   };
 
+  // Handle rank change
   handleRank = (rank) => {
       console.log('called');
       const currentComponent = this;
