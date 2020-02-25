@@ -1,10 +1,17 @@
+
+// ProfileSettings is a form that allows users to manage their profile.
+
 import './profile.scss';
 import '../../components/forms/forms.scss';
 import '../../components/loader/submitButtons.scss';
+
 import React, { Component } from 'react';
 import Dropzone from "react-dropzone";
 import axios from 'axios';
+
+// LoadingButton is a submission button component with a fancy animation
 import LoadingButton from '../../components/loader/LoadingButton';
+
 
 class ProfileSettings extends Component {
 
@@ -22,22 +29,27 @@ class ProfileSettings extends Component {
         loading: 'false',
     };
 
+    // Handle image being added to the dropzone
     onDrop = files => {
+        // Make sure to revoke old image before adding a new one
         window.URL.revokeObjectURL(this.state.image_preview);
+
+        // Set new image
         this.setState({ image_file: files[0], image_preview: URL.createObjectURL(files[0]) });
-        console.log(this.state.image_file.path);
     };
 
+    // Display the image preview
     showFilePreview() {
         const previewStyle = {
+            // This should contain styling to be applied to the img preview
         };
 
         let file = this.state.image_preview || null;
 
-        if (file === null) {
-            return null;
-        }
+        // If no image has been added then dont display anything
+        if (file === null) return null;
 
+        // Otherwise display the image as a preview
         return (
             <div className={"avatar-upload-overlay"}>
                 <img
@@ -49,6 +61,7 @@ class ProfileSettings extends Component {
         );
     };
 
+    // Handle any changes made to the form (update the state)
     handleChange = e => {
         let newValue = e.target.value;
         let key = e.target.name;
@@ -83,14 +96,17 @@ class ProfileSettings extends Component {
             });
     }
 
+    // Handle form submission
     handleSubmit = (e) => {
         e.preventDefault();
 
+        // Set loading button animation to 'loading' stage
         this.setState({loading: 'true'});
 
         const image_file = this.state.image_file;
         let currentComponent = this;
 
+        // If an image is present then start submit to image host
         if(image_file !== null){
             const formData = new FormData();
             formData.append('file', image_file);
@@ -111,15 +127,22 @@ class ProfileSettings extends Component {
                     console.log(error.config);
                 })
                 .then(function(response) {
-                const image = response.data.public_id;
-                currentComponent.setState({avatar: image});
-                currentComponent.handleBackendSubmit(currentComponent);
+
+                    // Set img to returned handle from host
+                    const image = response.data.public_id;
+                    currentComponent.setState({avatar: image});
+
+                    // Call backend submit and pass in 'this'
+                    currentComponent.handleBackendSubmit(currentComponent);
             });
         } else{
+
+            // If no profile photo is added then skip the submission to host
             this.handleBackendSubmit(currentComponent);
         }
     };
 
+    // Send profile state data to backend
     handleBackendSubmit(currentComponent) {
         const token = localStorage.getItem('access-token');
         const client = localStorage.getItem('client');

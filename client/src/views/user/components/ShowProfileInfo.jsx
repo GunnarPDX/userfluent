@@ -1,6 +1,9 @@
+// ShowProfileInfo displays the users public info such as social media handles.
+
 import "../profile.scss"
 import React, { Component } from 'react'
 
+// NOTE this component should be changed to a functional component with props passed in
 class ShowProfileInfo extends Component {
     state = {
         current_user: [],
