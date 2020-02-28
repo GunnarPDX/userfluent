@@ -74,6 +74,7 @@ Written by C. Gunnar Rosenberg <gunnarrosenberg@gmail.com>, Jan 1st 2020
 - [ ] Finish 404 page
 ### Comments
 - [ ] Add comments!
+- [ ] Add CSS classes
 ### Input Validation
 - [ ] Add input validation to new post form -> ensure all fields are filled
 ### Pricing and Product-Packages
