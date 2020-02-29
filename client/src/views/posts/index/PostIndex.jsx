@@ -130,19 +130,7 @@ class PostIndex extends Component {
                   <a className={'pagination-previous'} onClick={this.handlePrevious}>Back</a>
                   <a className={'pagination-next'} onClick={this.handleNext}>Next</a>
                   <ul className={'pagination-list'}>
-                      {/*
-                      <li><a className={'pagination-link'} onClick={this.handleGoToFirst}>1</a></li>
-                      <li><span className={'pagination-ellipsis'}>&hellip;</span></li>
-                      <li><a className={'pagination-link'} onClick={this.handlePrevious}>{currentPage - 1}</a></li>
-                      */}
-
                       <li><a className={'pagination-link posts-page-is-current'}>{currentPage}</a></li>
-
-                      {/*
-                      <li><a className={'pagination-link'} onClick={this.handleNext}>{currentPage + 1}</a></li>
-                      <li><span className={'pagination-ellipsis'}>&hellip;</span></li>
-                      <li><a className={'pagination-link'} >{lastPage}</a></li>
-                      */}
                   </ul>
               </nav>
           </div>
