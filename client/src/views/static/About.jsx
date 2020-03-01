@@ -1,6 +1,7 @@
 import "./static.scss"
 import React, { Component } from 'react';
 import HomeNav from "../landing/components/HomeNav";
+import BackdropLines from "./components/BackdropLines";
 
 class About extends Component {
     render() {
@@ -8,6 +9,7 @@ class About extends Component {
             <div className={"static-about-container-nil"}>
                 <HomeNav/>
                 <div className={'nav-spacer'}/>
+                <BackdropLines/>
 
                 <p>
                     About

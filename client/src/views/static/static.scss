@@ -1,4 +1,28 @@
 
+.vertical-line {
+  height: 1700px;
+  border-left: 1px solid #e8e8e8;
+}
+
+.right-line {
+  border-right: 1px solid #e8e8e8;
+}
+
+.backdrop-lines-block{
+  transform: translateZ(-10px);
+  z-index: -10;
+  height: 1700px;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  padding-left: 50px;
+  padding-right: 50px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 
 
 .static-about-title {

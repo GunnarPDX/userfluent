@@ -1,6 +1,7 @@
 import "./static.scss"
 import React, { Component } from 'react';
 import HomeNav from "../landing/components/HomeNav";
+import BackdropLines from "./components/BackdropLines";
 
 class Pricing extends Component {
     render() {
@@ -8,6 +9,7 @@ class Pricing extends Component {
             <div>
                 <HomeNav/>
                 <div className={'nav-spacer'}/>
+                <BackdropLines/>
                 Pricing
             </div>
         )

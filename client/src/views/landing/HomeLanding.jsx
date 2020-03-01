@@ -5,6 +5,7 @@ import './home.scss'
 import '../../components/navigation/navigation.scss'
 import React, { Component } from 'react';
 import HomeNav from "./components/HomeNav";
+import BackdropLines from "../static/components/BackdropLines";
 
 class HomeLanding extends Component {
 
@@ -17,19 +18,8 @@ class HomeLanding extends Component {
             <div>
                 <HomeNav/>
                 <div className={'nav-spacer'}/>
-                {/*<div className={'content-spacer'}/>*/}
 
-
-                <div className={'row backdrop-text-block'}>
-                    <div className={'columns'}>
-                        <div className={'column vertical-line'}/>
-                        <div className={'column vertical-line'}/>
-                        <div className={'column vertical-line'}/>
-                        <div className={'column vertical-line'}/>
-                        <div className={'column vertical-line'}/>
-                        <div className={'column vertical-line right-line'}/>
-                    </div>
-                </div>
+                <BackdropLines/>
 
                 <div className={'row'}>
 
