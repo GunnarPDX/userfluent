@@ -3,6 +3,7 @@
 
 import '../../../components/navigation/navigation.scss'
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class HomeNav extends Component {
     render() {
@@ -13,21 +14,23 @@ class HomeNav extends Component {
                 <div className={"level is-mobile nav-height"}>
 
                     <div className={"level-item lower-nav-center-items"}>
-                        <a className={"lower-nav-center-option"}>
+                        <Link to={'/'} className={"lower-nav-center-option"}>
                             Home
-                        </a>
-                        <a className={"lower-nav-center-option"}>
+                        </Link>
+
+                        <Link to={'/explore'} className={"lower-nav-center-option"}>
                             Explore
-                        </a>
-                        <a className={"lower-nav-center-option"}>
+                        </Link>
+
+                        <Link to={'/pricing'} className={"lower-nav-center-option"}>
                             Pricing
-                        </a>
-                        <a className={"lower-nav-center-option"}>
+                        </Link>
+                        <Link to={'/about'} className={"lower-nav-center-option"}>
                             About
-                        </a>
-                        <a className={"lower-nav-center-option"}>
+                        </Link>
+                        <Link to={'/tutorial'} className={"lower-nav-center-option"}>
                             How It Works
-                        </a>
+                        </Link>
                     </div>
 
                 </div>

@@ -7,6 +7,11 @@ import React, { Component } from 'react';
 import HomeNav from "./components/HomeNav";
 
 class HomeLanding extends Component {
+
+    componentDidMount() {
+
+    }
+
     render() {
         return (
             <div>
@@ -14,7 +19,7 @@ class HomeLanding extends Component {
                 <div className={'nav-spacer'}/>
                 {/*<div className={'content-spacer'}/>*/}
 
-                {/*
+
                 <div className={'row backdrop-text-block'}>
                     <div className={'columns'}>
                         <div className={'column vertical-line'}/>
@@ -25,13 +30,37 @@ class HomeLanding extends Component {
                         <div className={'column vertical-line right-line'}/>
                     </div>
                 </div>
-                */}
 
-                <div className={'landing-header-container'}>
+                <div className={'row'}>
 
-                    <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583013200/UserFluent/home-illustration_xapvmf.svg'} alt={'porduct image'} className={'landing-preview-image'}/>
+                    <div className={'columns'}>
+                        <div className={'column'}>
+
+                            <div className={'landing-header-container'}>
+                                <div className={'landing-header-text-box'}>
+                                    <p className={'landing-header-text'} id={'text'}>
+                                        Great customer
+                                        experience starts
+                                        with human insight
+                                    </p>
+                                    <p className={'landing-subheader-text'}>
+                                        See, hear and talk to your customers as they engage with your products, apps and messaging. Make better decisions. Build more customer-centric experiences.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div className={'column'}>
+
+                            <div className={'landing-img-container'}>
+                                <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583034229/UserFluent/landing-img_imkr1f.svg'} alt={'porduct image'} className={'landing-preview-image'}/>
+                            </div>
+
+                        </div>
+                    </div>
 
                 </div>
+
 
 
 

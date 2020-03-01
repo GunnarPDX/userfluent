@@ -204,6 +204,5 @@ module Api::V1
       params.require(:post).permit(:title, :image, :link, :content, :category, :platform)
     end
 
-
   end
 end
