@@ -29,12 +29,13 @@ class HomeLanding extends Component {
                             <div className={'landing-header-container'}>
                                 <div className={'landing-header-text-box'}>
                                     <p className={'landing-header-text'} id={'text'}>
-                                        Great customer
-                                        experience starts
-                                        with human insight
+                                        Great user experiences
+                                        start at <span className={'underline--magical'}>UserFluent.</span>
                                     </p>
                                     <p className={'landing-subheader-text'}>
-                                        See, hear and talk to your customers as they engage with your products, apps and messaging. Make better decisions. Build more customer-centric experiences.
+                                        Test your product with <span className={'underline--magical'}>real users.</span> Receive heat-maps, AI analytics,
+                                        survey results, user directed feedback, and accessibility, performance and
+                                        discoverability reviews. Build a user-fluent experience.
                                     </p>
                                 </div>
                             </div>
