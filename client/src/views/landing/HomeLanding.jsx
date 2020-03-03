@@ -21,10 +21,10 @@ class HomeLanding extends Component {
 
                 <BackdropLines/>
 
-                <div className={'row'}>
+                <div className={''}>
 
-                    <div className={'columns'}>
-                        <div className={'column'}>
+                    <div className={'level'}>
+                        <div className={'level-left'}>
 
                             <div className={'landing-header-container'}>
                                 <div className={'landing-header-text-box'}>
@@ -41,7 +41,7 @@ class HomeLanding extends Component {
                             </div>
 
                         </div>
-                        <div className={'column'}>
+                        <div className={'level-right'}>
 
                             <div className={'landing-img-container'}>
                                 <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583034229/UserFluent/landing-img_imkr1f.svg'} alt={'porduct image'} className={'landing-preview-image'}/>

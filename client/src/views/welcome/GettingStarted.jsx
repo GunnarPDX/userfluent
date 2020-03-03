@@ -32,11 +32,13 @@ class GettingStarted extends Component {
 
                 <ProfileSettings/>
 
+                {/*
                 <div className={'welcome-content-header'}>
                     How to use.
                 </div>
 
                 <Tutorial/>
+                */}
 
                 <div className={"content-spacer"}/>
                 <div className={"content-spacer"}/>

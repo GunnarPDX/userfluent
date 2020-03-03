@@ -231,8 +231,17 @@
     text-decoration: underline;
 }
 
-.lower-nav-friends {
-    padding-right: 22px;
+.lower-nav-right-pad {
+    padding-right: 242px;
+}
+
+.lower-nav-left-pad {
+    padding-right: 20px;
+}
+
+.lower-nav-dropdown {
+    width: 100px;
+    margin-left: 5px;
 }
 
 .content-filter-button {

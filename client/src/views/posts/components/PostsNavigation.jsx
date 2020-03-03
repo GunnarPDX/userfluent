@@ -5,6 +5,7 @@
 import '../../../components/navigation/navigation.scss'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import LandingLinks from "../../../components/navigation/components/LandingLinks";
 
 class PostsNavigation extends Component {
 
@@ -22,10 +23,20 @@ class PostsNavigation extends Component {
         });
     };
 
+    // Handle search rank toggle
+    handlePlatformChange = (e) => {
+        const currentComponent = this;
+        this.setState({ platform: e.target.value }, function () {
+            this.props.filterPlatform(currentComponent.state.platform);
+        });
+    };
+
+    /*
     componentDidMount() {
         let dropdown = document.querySelector('.dropdown');
         dropdown.addEventListener("click", function(){ dropdown.classList.toggle('is-active'); });
     }
+    */
 
     render() {
 
@@ -34,6 +45,9 @@ class PostsNavigation extends Component {
                 <nav className={"lower-nav-bar"}>
                     <div className={"level is-mobile nav-height"}>
 
+                        <div className={'lower-nav-right-pad'}/>
+
+                        {/*
                         <div className={"dropdown level-left"}>
                             <div className="dropdown-trigger">
                                 <div className={"lower-nav-ellipsis lower-posts-dropdown"}>
@@ -42,7 +56,6 @@ class PostsNavigation extends Component {
                             </div>
                             <div className="dropdown-menu lower-nav-dropdown-menu-gap" id="dropdown-menu6" role="menu">
                                 <div className="dropdown-content post-dropdown-theme">
-                                    {/* Mostly dead links right now */}
                                     <div className="dropdown-item">
                                         <Link to={'/'}>News Feed</Link>
                                     </div>
@@ -64,7 +77,11 @@ class PostsNavigation extends Component {
                                 </div>
                             </div>
                         </div>
+                        */}
 
+                        <LandingLinks/>
+
+                        {/*
                         <div className={"level-item lower-nav-center-items"}>
                             <a onClick={() => {this.props.filterPlatform('')}} className={"lower-nav-center-option"}>
                                 All
@@ -91,23 +108,44 @@ class PostsNavigation extends Component {
                                 Other
                             </a>
                         </div>
+                        */}
 
                         <div className={"level-right"}>
 
-                            <div className={"lower-nav-friends"}>
-
+                            <div className={''}>
                                 <div className="field">
                                     <div className="control">
-                                        <div className="select is-rounded is-charcoal is-small">
-                                            <select onChange={this.handleRankChange} id={'rank-select'}>
+                                        <div className="select is-charcoal is-small">
+                                            <select onChange={this.handlePlatformChange} id={'rank-select'} className={'lower-nav-dropdown'}>
+                                                <option value={''}>All</option>
+                                                <option value={'web_app'}>Web-App</option>
+                                                <option value={'web_static'}>Web-static</option>
+                                                <option value={'web_mobile'}>Web-Mobile</option>
+                                                <option value={'desktop'}>Desktop</option>
+                                                <option value={'ios'}>IOS</option>
+                                                <option value={'android'}>Android</option>
+                                                <option value={'AR/VR'}>AR/VR</option>
+                                                <option value={'web_app'}>Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className={"lower-nav-left-pad"}>
+                                <div className="field">
+                                    <div className="control">
+                                        <div className="select is-charcoal is-small">
+                                            <select onChange={this.handleRankChange} id={'rank-select'} className={'lower-nav-dropdown'}>
                                                 <option value={'recent'}>Recent</option>
                                                 <option value={'popular'}>Popular</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
+
+
                         </div>
 
                     </div>
