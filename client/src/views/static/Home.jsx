@@ -1,31 +1,21 @@
-
-//
-
-import './home.scss'
-import '../../components/navigation/navigation.scss'
+import './static.scss'
 import React, { Component } from 'react';
-import HomeNav from "./components/HomeNav";
-import BackdropLines from "../static/components/BackdropLines";
+import LandingNav from "./components/LandingNav";
+import BackdropLines from "./components/BackdropLines";
 
-class HomeLanding extends Component {
-
-    componentDidMount() {
-
-    }
+class Home extends Component {
 
     render() {
         return (
             <div>
-                <HomeNav/>
+                <LandingNav/>
                 <div className={'nav-spacer'}/>
 
                 <BackdropLines/>
 
                 <div className={''}>
-
                     <div className={'level'}>
                         <div className={'level-left'}>
-
                             <div className={'landing-header-container'}>
                                 <div className={'landing-header-text-box'}>
                                     <p className={'landing-header-text'} id={'text'}>
@@ -39,25 +29,18 @@ class HomeLanding extends Component {
                                     </p>
                                 </div>
                             </div>
-
                         </div>
                         <div className={'level-right'}>
-
                             <div className={'landing-img-container'}>
                                 <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583034229/UserFluent/landing-img_imkr1f.svg'} alt={'porduct image'} className={'landing-preview-image'}/>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
-
-
-
 
             </div>
         )
     }
 }
 
-export default HomeLanding;
+export default Home;

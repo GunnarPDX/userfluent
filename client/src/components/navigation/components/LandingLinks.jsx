@@ -9,17 +9,17 @@ const LandingLinks = () => {
             <Link to={'/'} className={"lower-nav-center-option"}>
                 Home
             </Link>
-            <Link to={'/explore'} className={"lower-nav-center-option"}>
-                Explore
+            <Link to={'/about'} className={"lower-nav-center-option"}>
+                About
             </Link>
             <Link to={'/pricing'} className={"lower-nav-center-option"}>
                 Pricing
             </Link>
-            <Link to={'/about'} className={"lower-nav-center-option"}>
-                About
-            </Link>
             <Link to={'/tutorial'} className={"lower-nav-center-option"}>
                 How It Works
+            </Link>
+            <Link to={'/explore'} className={"lower-nav-center-option"}>
+                Explore
             </Link>
         </div>
     )

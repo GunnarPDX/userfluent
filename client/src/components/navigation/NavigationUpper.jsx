@@ -165,11 +165,14 @@ class NavigationUpper extends Component {
 
                             {this.renderNavOptions()}
 
+                            {/*
                             <li className={"nav-li"}>
                                 <Link to={'/'} className={"nav-li-a"}>
                                     <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1578096333/UserFluent/Navbar%20Upper%20Icons/search_cwlm0f.svg"} alt={"Search"} className={"nav-icon"}/>
                                 </Link>
                             </li>
+                            */}
+
                         </ul>
 
                     </nav>

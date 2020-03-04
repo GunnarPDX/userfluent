@@ -1,13 +1,13 @@
 import "./static.scss"
 import React, { Component } from 'react';
 import BackdropLines from "./components/BackdropLines";
-import HomeNav from "../landing/components/HomeNav";
+import LandingNav from "./components/LandingNav";
 
 class Tutorial extends Component {
     render() {
         return (
             <div>
-                <HomeNav/>
+                <LandingNav/>
                 <div className={'nav-spacer'}/>
                 <BackdropLines/>
 

@@ -35,9 +35,11 @@ import GettingStarted from './views/welcome/GettingStarted';
 
 // NotFound is the 404 landing page and base condition route
 import NotFound from "./views/static/errors/NotFound";
-import HomeLanding from "./views/landing/HomeLanding";
+
 import Pricing from "./views/static/Pricing";
 import Tutorial from "./views/static/Tutorial";
+import Home from "./views/static/Home";
+//import HomeLanding from "./views/static/home-old/HomeLanding";
 
 
 // NOTE make ShowPost and ShowProfile routes: /post/:id and /user/:id
@@ -51,7 +53,7 @@ function App() {
 
             <Switch>
 
-                <Route exact path={'/'} component={HomeLanding}/>
+                <Route exact path={'/'} component={Home}/>
                 <Route exact path={'/pricing'} component={Pricing}/>
                 <Route exact path={'/about'} component={About}/>
                 <Route exact path={'/tutorial'} component={Tutorial}/>

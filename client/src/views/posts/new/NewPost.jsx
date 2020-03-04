@@ -224,6 +224,7 @@ class NewPost extends Component {
                       <PlatformSelect onSelect={this.handleChange}/>
                   </div>
 
+                  {/*
                   <div className={'form-row-title'}>
                       Select Packages
                   </div>
@@ -235,6 +236,7 @@ class NewPost extends Component {
                   </div>
 
                   <AddOnSelect/>
+                  */}
 
                   <div className={'form-row-title'}>
                       User Agreement

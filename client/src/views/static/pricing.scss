@@ -75,13 +75,18 @@
   height: 1px;
   background-color: #E6E6E6;
   width: 90%;
-  margin: 10px auto;
+  margin: 20px auto;
   background-image: linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
   background-image: -o-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
   background-image: -moz-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
   background-image: -webkit-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
   background-image: -ms-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
   background-image: -webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, white), color-stop(0.5, gray), color-stop(0.98, white) );
+}
+
+.package-title-subheader {
+  color: #777777;
+  font-size: 12px;
 }
 
 .package-features-subheader {

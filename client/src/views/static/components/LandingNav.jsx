@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import LandingLinks from "../../../components/navigation/components/LandingLinks";
 
-class HomeNav extends Component {
+class LandingNav extends Component {
     render() {
         return (
             <div className={"lower-nav-bar"}>
@@ -22,4 +22,4 @@ class HomeNav extends Component {
     }
 }
 
-export default HomeNav;
+export default LandingNav;
