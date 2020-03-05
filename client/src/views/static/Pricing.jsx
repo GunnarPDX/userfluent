@@ -11,7 +11,7 @@ class Pricing extends Component {
             <div>
                 <LandingNav/>
                 <div className={'nav-spacer'}/>
-                <BackdropLines/>
+                {/*<BackdropLines/>*/}
 
                 <p className={'landing-header-text'} id={'text'}>
                     Our pricing. {/*<span className={'underline--magical'}>pricing.</span>*/}

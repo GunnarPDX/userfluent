@@ -9,7 +9,6 @@ class Tutorial extends Component {
             <div>
                 <LandingNav/>
                 <div className={'nav-spacer'}/>
-                <BackdropLines/>
 
                 This will get added when the app is further finished...
             </div>

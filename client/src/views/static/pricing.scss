@@ -69,6 +69,12 @@
     text-decoration: none;
   }
 
+  &:active {
+    border: 1px solid #00634a;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
 }
 
 .package-row-divider {

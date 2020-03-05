@@ -20,6 +20,7 @@ import DestroyPost from '../components/DestroyPost'
 
 // DestroyComment allows you to delete a comment
 import DestroyComment from "../components/DestroyComment";
+import LandingNav from "../../static/components/LandingNav";
 
 class ShowPost extends Component {
 
@@ -54,75 +55,82 @@ class ShowPost extends Component {
     renderPost = () => {
         return this.state.post.map(post => {
             return (
-                <div key={post.id} className={"uf-fade-in"}>
-                    <div className={"columns"}>
-                        <div className="column is-1"/>
-                        <div className="show-post-container column is-6">
-                            <div className="post-box">
-                                <div>
-                                    <img src={post.full_image} alt={'post image'}/>
+                <div>
+
+                    <LandingNav/>
+                    <div className={'nav-spacer'}/>
+
+                    <div key={post.id} className={"uf-fade-in"}>
+                        <div className={"columns"}>
+                            <div className="column is-1"/>
+                            <div className="show-post-container column is-6">
+                                <div className="post-box">
+                                    <div>
+                                        <img src={post.full_image} alt={'post image'}/>
+                                    </div>
+                                    <div className={"level is-mobile post-analytics"}>
+                                        <div className={"level-left"}>
+                                            <div className={"level-item"}>
+                                                <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1579927642/UserFluent/post-icons/ellip-light-grey_exego5.svg"} alt={'views'} className={""}/>
+                                            </div>
+                                        </div>
+                                        <div className={"level-right"}>
+                                            <div className={"level-item views data"}>
+                                                <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1579927642/UserFluent/post-icons/views-light-grey_gvcnzn.svg'} alt={'views'} className={"views-icon"}/>
+                                                &nbsp; {post.views}
+                                            </div>
+                                            <div className={"level-item likes"}>
+                                                <PostLike post_id={post.id} likes={post.likes} liked={post.liked}/>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className={"level is-mobile post-analytics"}>
+                                <div className={"level is-mobile post-box post-info-nav"}>
                                     <div className={"level-left"}>
                                         <div className={"level-item"}>
-                                            <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1579927642/UserFluent/post-icons/ellip-light-grey_exego5.svg"} alt={'views'} className={""}/>
+                                            <img src={post.user.avatar_small} alt={"user profile"} className={"post-hover-avatar"}/>
+                                        </div>
+                                        <div className={"level-item"}>
+                                            <Link to={`/show/userprofile/${post.user.id}`}>
+                                                <div className="show-post-username">By: {post.user.username}</div>
+                                            </Link>
+                                            <div className="show-post-time"> &nbsp; At: {post.time} </div>
                                         </div>
                                     </div>
                                     <div className={"level-right"}>
-                                        <div className={"level-item views data"}>
-                                            <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1579927642/UserFluent/post-icons/views-light-grey_gvcnzn.svg'} alt={'views'} className={"views-icon"}/>
-                                            &nbsp; {post.views}
-                                        </div>
-                                        <div className={"level-item likes"}>
-                                            <PostLike post_id={post.id} likes={post.likes} liked={post.liked}/>
+                                        <div className={"level-item"}>
+                                            <button className={"button"}> Follow </button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className={"level is-mobile post-box post-info-nav"}>
-                                <div className={"level-left"}>
-                                    <div className={"level-item"}>
-                                        <img src={post.user.avatar_small} alt={"user profile"} className={"post-hover-avatar"}/>
-                                    </div>
-                                    <div className={"level-item"}>
-                                        <Link to={`/show/userprofile/${post.user.id}`}>
-                                            <div className="show-post-username">By: {post.user.username}</div>
-                                        </Link>
-                                        <div className="show-post-time"> &nbsp; At: {post.time} </div>
-                                    </div>
-                                </div>
-                                <div className={"level-right"}>
-                                    <div className={"level-item"}>
-                                        <button className={"button"}> Follow </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={"post-content-box"}>
+                                <div className={"post-content-box"}>
 
+                                    <div>
+                                        <div className="bold-title"> {post.title} </div>
+                                    </div>
+
+                                    <div className={"post-main-content"}>
+                                        <div dangerouslySetInnerHTML={{__html: post.content}}/>
+                                        {/*post.content*/}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={"show-comments-container column is-4"}>
+                                <div className={"post-box"}>
+                                    <div className="">
+                                        <CommentPrompt post_id={post.id}/>
+                                    </div>
+                                </div>
                                 <div>
-                                    <div className="bold-title"> {post.title} </div>
-                                </div>
-
-                                <div className={"post-main-content"}>
-                                    <div dangerouslySetInnerHTML={{__html: post.content}}/>
-                                    {/*post.content*/}
+                                    <div className={""}>
+                                        {this.renderComments(post)}
+                                    </div>
                                 </div>
                             </div>
+                            <div className="column is-1"/>
                         </div>
-                        <div className={"show-comments-container column is-4"}>
-                            <div className={"post-box"}>
-                                <div className="">
-                                    <CommentPrompt post_id={post.id}/>
-                                </div>
-                            </div>
-                            <div>
-                                <div className={""}>
-                                    {this.renderComments(post)}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="column is-1"/>
                     </div>
+
                 </div>
             )
         })

@@ -54,14 +54,16 @@
 
   float: right;
   padding-right: 20px;
-  height: auto;
-  width: 40vw;
+  //height: auto;
+  max-width: 40vw;
+  max-height: 80vh;
   //min-width: 500px;
 }
 
 .landing-header-container {
   padding-left: 10%;
   width: 60vw;
+  height: 80vh;
 }
 
 .landing-header-text-box {
