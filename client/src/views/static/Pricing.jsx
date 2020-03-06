@@ -11,11 +11,14 @@ class Pricing extends Component {
             <div>
                 <LandingNav/>
                 <div className={'nav-spacer'}/>
-                {/*<BackdropLines/>*/}
+
 
                 <p className={'landing-header-text'} id={'text'}>
-                    Our pricing. {/*<span className={'underline--magical'}>pricing.</span>*/}
+                    <span className={'underline--magical'}>Our pricing.</span>
                 </p>
+
+
+                {/*<img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583395503/UserFluent/pricing_itgawz.svg'} alt={'pricing'} className={'pricing-header-image'}/>*/}
 
 
                 <div className={'columns price-container'}>

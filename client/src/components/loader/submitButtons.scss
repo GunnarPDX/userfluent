@@ -3,8 +3,8 @@
 .submit-button {
   // #5777C9
   //background-color: #00B3BD;// #EDAB6D; //#373737;
-  background: #00B3BD;
-  background: -webkit-linear-gradient(0.13turn, #5777C9, #00B3BD);
+  background: #02E6B7;
+  //background: -webkit-linear-gradient(0.13turn, #02e6b7, #00B3BD);
 
   border-radius: 3px;
   border: none;
@@ -31,10 +31,12 @@
   justify-content: center;
   flex-direction: column;
 
+
   &:hover {
-    background: #00B3BD;
-    background: -webkit-linear-gradient(0.13turn, #4762a5, #00878e);
+    background: #02d4a9;
+    //background: -webkit-linear-gradient(0.13turn, #4762a5, #00878e);
   }
+
 
   //
   // Text

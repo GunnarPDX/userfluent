@@ -10,7 +10,9 @@ class Tutorial extends Component {
                 <LandingNav/>
                 <div className={'nav-spacer'}/>
 
-                This will get added when the app is further finished...
+                <p className={'landing-header-text'} id={'text'}>
+                    <span className={'underline--magical'}>How it works.</span>
+                </p>
             </div>
         )
     }

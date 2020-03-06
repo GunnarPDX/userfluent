@@ -41,10 +41,16 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .landing-img-container, .landing-header-container {
+  .landing-header-container {
     width: 100% !important;
-    padding: 10px;
-    margin: 10px;
+    padding: 10px !important;
+  }
+  .landing-header-text {
+    font-size: 7vw !important;
+  }
+
+  .landing-img-container {
+    display: none;
   }
 }
 
@@ -56,20 +62,19 @@
   padding-right: 20px;
   //height: auto;
   max-width: 40vw;
-  max-height: 80vh;
   //min-width: 500px;
 }
 
 .landing-header-container {
   padding-left: 10%;
   width: 60vw;
-  height: 80vh;
+
 }
 
 .landing-header-text-box {
   text-wrap: avoid;
   width: 95%;
-  margin: 100px auto;
+  margin: 0px auto;
   padding-top: 0;
   text-align: left;
 }
@@ -127,9 +132,53 @@
 
 }
 
+
+.home-btn {
+  margin: 20px;
+  background: #00e6b7;
+  border: 1px solid #00e6b7;
+
+  color: #FFFFFF;
+
+  font-weight: bold;
+
+  &:hover {
+    border: 1px solid #00a97f;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  &:active {
+    border: 1px solid #00634a;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+}
+
 .underline--magical {
-  background-image: linear-gradient(120deg, #73a1fa 0%, #2ebdbb 100%);
+  background-image: linear-gradient(120deg, #4cfaa2 0%, #3cfffd 100%);
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: 0 88%;
+}
+
+.home-row-divider {
+  height: 1px;
+  background-color: #E6E6E6;
+  width: 90%;
+  margin: 20px auto;
+  background-image: linear-gradient(left , #f7f7f7 2%, #E6E6E6 50%, #f7f7f7 98%);
+  background-image: -o-linear-gradient(left , #f7f7f7 2%, #E6E6E6 50%, #f7f7f7 98%);
+  background-image: -moz-linear-gradient(left , #f7f7f7 2%, #E6E6E6 50%, #f7f7f7 98%);
+  background-image: -webkit-linear-gradient(left , #f7f7f7 2%, #E6E6E6 50%, #f7f7f7 98%);
+  background-image: -ms-linear-gradient(left , #f7f7f7 2%, #E6E6E6 50%, #f7f7f7 98%);
+  background-image: -webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, #f7f7f7), color-stop(0.5, gray), color-stop(0.98, #f7f7f7) );
+}
+
+.design-dna {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 8.5vw;
+  width: 200px;
 }
