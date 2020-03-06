@@ -44,7 +44,19 @@ class Home extends Component {
 
                     <div className={'level'}>
                         <div className={'level-left'}>
-                            <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583457696/UserFluent/ai-img_rjsbrd.svg'} alt={'AI problem solving'} className={'design-dna'}/>
+                            <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583457696/UserFluent/ai-img_rjsbrd.svg'} alt={'AI problem solving'} className={'home-info-img level-item'}/>
+
+                            <div className={'level-item'}>
+                                <div>
+                                    <p className={'landing-info-header-text'} id={'text'}>
+                                        Automate your testing process.
+                                    </p>
+                                    <p className={'landing-info-subheader-text'}>
+                                        Save time and money by automating your testing.
+                                    </p>
+                                </div>
+                            </div>
+
                         </div>
                         <div className={'level-right'}>
 
@@ -57,7 +69,20 @@ class Home extends Component {
 
                     <div className={'level'}>
                         <div className={'level-left'}>
-                            <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583459279/UserFluent/pinpoint-problems_ph8pin.svg'} alt={'design is in our DNA'} className={'design-dna'}/>
+                            <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583459279/UserFluent/pinpoint-problems_ph8pin.svg'} alt={'design is in our DNA'} className={'home-info-img level-item'}/>
+
+                            <div className={'level-item'}>
+                                <div>
+                                    <p className={'landing-info-header-text'} id={'text'}>
+                                        Pinpoint your users pains.
+                                    </p>
+
+                                    <p className={'landing-info-subheader-text'}>
+                                        Test your product with real users, see how they use it and where they get stuck.
+                                    </p>
+                                </div>
+                            </div>
+
                         </div>
                         <div className={'level-right'}>
 
@@ -70,7 +95,20 @@ class Home extends Component {
 
                     <div className={'level'}>
                         <div className={'level-left'}>
-                            <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583455727/UserFluent/designDNA_cqdsbk.svg'} alt={'design is in our DNA'} className={'design-dna'}/>
+                            <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583514529/UserFluent/designDNA_tjbaqu.svg'} alt={'design is in our DNA'} className={'home-info-img level-item'}/>
+
+                            <div className={'level-item'}>
+                                <div>
+                                    <p className={'landing-info-header-text'} id={'text'}>
+                                        Design for your users.
+                                    </p>
+
+                                    <p className={'landing-info-subheader-text'}>
+                                        We help you better understand your users so you can make more meaningful connections with them.
+                                    </p>
+                                </div>
+                            </div>
+
                         </div>
                         <div className={'level-right'}>
 

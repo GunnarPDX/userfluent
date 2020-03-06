@@ -13,6 +13,11 @@ class Tutorial extends Component {
                 <p className={'landing-header-text'} id={'text'}>
                     <span className={'underline--magical'}>How it works.</span>
                 </p>
+
+                <p className={'landing-subheader-text'}>
+                    It doesn't.
+                </p>
+
             </div>
         )
     }
