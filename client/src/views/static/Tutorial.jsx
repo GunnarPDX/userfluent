@@ -14,6 +14,8 @@ class Tutorial extends Component {
                     <span className={'underline--magical'}>How it works.</span>
                 </p>
 
+                <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583565009/UserFluent/data-monster_odylhr.svg'} alt={'ai-data-illustration'} className={'how-it-works-img'}/>
+
                 <p className={'landing-subheader-text'}>
                     Coming soon.
                 </p>

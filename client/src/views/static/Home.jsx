@@ -108,9 +108,12 @@ class Home extends Component {
                                         We help you better understand your users so you can make more meaningful connections with them.
                                     </p>
 
+                                    {/*
                                     <button className={'button'}>
                                         Learn more
                                     </button>
+                                    */}
+
                                 </div>
                             </div>
 
@@ -121,7 +124,7 @@ class Home extends Component {
                     </div>
                 </div>
 
-                <Footer/>
+                {/*<Footer/>*/}
 
             </div>
         )
