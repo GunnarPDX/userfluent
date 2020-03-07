@@ -22,7 +22,8 @@ class Home extends Component {
                                         start at <span className={'underline--magical'}>UserFluent.</span>
                                     </p>
                                     <p className={'landing-subheader-text'}>
-                                        Test your product with <span className={'underline--magical'}>real users.</span> Receive heat-maps, AI analytics,
+                                        Test your product with <span className={'underline--magical'}>real users.</span>
+                                        Receive usage heat-maps, AI analytics, visually mapped usage patterns,
                                         survey results, user directed feedback, and accessibility, performance and
                                         discoverability reviews. Build a user-fluent experience.
                                     </p>
@@ -53,7 +54,7 @@ class Home extends Component {
                                         Automate your testing process.
                                     </p>
                                     <p className={'landing-info-subheader-text'}>
-                                        Save time and money by automating your testing.
+                                        Save time and money by automating your user testing with UserFluent.
                                     </p>
                                 </div>
                             </div>
