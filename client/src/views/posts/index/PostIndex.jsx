@@ -121,6 +121,7 @@ class PostIndex extends Component {
       //const lastPage = this.state.pagy.pages;
 
 
+
       if(this.state.pagy.pages === 1){
           return null;
       } else return (
@@ -135,6 +136,22 @@ class PostIndex extends Component {
               </nav>
           </div>
       )
+          /*
+          setTimeout(() => {
+          return (
+              <div className={'posts-pagination-container'}>
+                  <div className={'content-spacer'}/>
+                  <nav className={'pagination is-centered is-rounded'} role={'navigation'}>
+                      <a className={'pagination-previous'} onClick={this.handlePrevious}>Back</a>
+                      <a className={'pagination-next'} onClick={this.handleNext}>Next</a>
+                      <ul className={'pagination-list'}>
+                          <li><a className={'pagination-link posts-page-is-current'}>{currentPage}</a></li>
+                      </ul>
+                  </nav>
+              </div>
+          )
+      }, 200);
+      */
   };
 
 
@@ -167,7 +184,7 @@ class PostIndex extends Component {
                   columnWidth={370}
                   gutterWidth={20}
                   gutterHeight={20}
-                  itemHeight={315}
+                  itemHeight={295}
                   springConfig={{ stiffness: 170, damping: 26 }}
                   className={'posts-container'}
               >

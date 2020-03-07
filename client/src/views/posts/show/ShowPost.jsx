@@ -99,7 +99,7 @@ class ShowPost extends Component {
                                     </div>
                                     <div className={"level-right"}>
                                         <div className={"level-item"}>
-                                            <button className={"button"}> Follow </button>
+                                            <button className={"button"}> Visit Site </button>
                                         </div>
                                     </div>
                                 </div>

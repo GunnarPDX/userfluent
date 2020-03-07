@@ -28,6 +28,7 @@ const Post = (props) => {
         <div>
             <div className={'post-grid-item'}>
                 <div className={'post-wrapper'}>
+
                     <div onClick={() => {handleShowPost(props)}} className={'cursor-pointer'}>
                         <div className={'post-image-placeholder'}>
                             <img src={props.post.thumbnail} alt={'post image'} className={'image-fade'}/>
@@ -44,6 +45,8 @@ const Post = (props) => {
                             </div>
                         </div>
                     </div>
+
+                    {/*
                     <div className={'level is-mobile post-analytics'}>
                         <div className={'level-left'}>
                             <div className={'level-item'}>
@@ -60,6 +63,8 @@ const Post = (props) => {
                             </div>
                         </div>
                     </div>
+                    */}
+
                 </div>
             </div>
         </div>
