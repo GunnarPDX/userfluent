@@ -15,7 +15,7 @@ class Tutorial extends Component {
                 </p>
 
                 <p className={'landing-subheader-text'}>
-                    It doesn't.
+                    Coming soon.
                 </p>
 
             </div>

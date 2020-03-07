@@ -2,6 +2,7 @@ import './static.scss'
 import React, { Component } from 'react';
 import LandingNav from "./components/LandingNav";
 import BackdropLines from "./components/BackdropLines";
+import Footer from "../../components/navigation/Footer";
 
 class Home extends Component {
 
@@ -106,6 +107,10 @@ class Home extends Component {
                                     <p className={'landing-info-subheader-text'}>
                                         We help you better understand your users so you can make more meaningful connections with them.
                                     </p>
+
+                                    <button className={'button'}>
+                                        Learn more
+                                    </button>
                                 </div>
                             </div>
 
@@ -115,6 +120,8 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
+
+                <Footer/>
 
             </div>
         )
