@@ -36,9 +36,15 @@ const Post = (props) => {
                                 <span className={'post-hover-avatar'}>
                                     <img src={props.post.user.avatar_small} alt={'profile avatar'} className={'post-hover-avatar'}/>
                                 </span>
+
+                                <span className={'post-hover-username'}>
+                                    By: {props.post.user.username}
+                                </span>
+                                {/*
                                 <a onClick={(e) => {handleShowProfile(e, props)}} className={'post-hover-username'}>
                                     By: {props.post.user.username}
                                 </a>
+                                */}
                             </span>
                             <div className={'post-hover-title-container'}>
                                 <div className={'post-hover-title'}>{props.post.title}</div>

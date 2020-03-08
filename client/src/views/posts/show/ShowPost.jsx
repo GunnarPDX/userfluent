@@ -62,7 +62,9 @@ class ShowPost extends Component {
 
                     <div key={post.id} className={"uf-fade-in"}>
                         <div className={"columns"}>
-                            <div className="column is-1"/>
+
+                            <div className="column is-3"/>
+
                             <div className="show-post-container column is-6">
                                 <div className="post-box">
                                     <div>
@@ -85,16 +87,20 @@ class ShowPost extends Component {
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className={"level is-mobile post-box post-info-nav"}>
                                     <div className={"level-left"}>
                                         <div className={"level-item"}>
                                             <img src={post.user.avatar_small} alt={"user profile"} className={"post-hover-avatar"}/>
                                         </div>
                                         <div className={"level-item"}>
+                                            <div className="show-post-username">{post.user.username}</div>
+                                            {/*
                                             <Link to={`/show/userprofile/${post.user.id}`}>
                                                 <div className="show-post-username">By: {post.user.username}</div>
                                             </Link>
                                             <div className="show-post-time"> &nbsp; At: {post.time} </div>
+                                            */}
                                         </div>
                                     </div>
                                     <div className={"level-right"}>
@@ -115,6 +121,8 @@ class ShowPost extends Component {
                                     </div>
                                 </div>
                             </div>
+
+                            {/*
                             <div className={"show-comments-container column is-4"}>
                                 <div className={"post-box"}>
                                     <div className="">
@@ -127,7 +135,9 @@ class ShowPost extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="column is-1"/>
+                            */}
+
+                            <div className="column is-3"/>
                         </div>
                     </div>
 
