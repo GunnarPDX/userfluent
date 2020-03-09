@@ -39,6 +39,7 @@ import NotFound from "./views/static/errors/NotFound";
 import Pricing from "./views/static/Pricing";
 import Tutorial from "./views/static/Tutorial";
 import Home from "./views/static/Home";
+import ProjectDash from "./views/user/dashboards/ProjectDash";
 //import HomeLanding from "./views/static/home-old/HomeLanding";
 
 
@@ -63,6 +64,7 @@ function App() {
                 <Route exact path={'/profile/settings'} component={ProfileSettings}/>
                 <Route exact path={'/show/post/:id'} component={ShowPost} />
                 <Route exact path={'/show/userprofile/:id'} component={ShowProfile} />
+                <Route exact path={'/dashboard'} component={ProjectDash}/>
                 <Route exact path={'/welcome'} component={GettingStarted}/>
 
                 <Route component={NotFound}/>

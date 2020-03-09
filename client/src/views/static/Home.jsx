@@ -22,7 +22,7 @@ class Home extends Component {
                                         start at <span className={'underline--magical'}>UserFluent.</span>
                                     </p>
                                     <p className={'landing-subheader-text'}>
-                                        Test your product with <span className={'underline--magical'}>real users.</span>
+                                        Test your product with <span className={'underline--magical'}>real users.</span>&nbsp;
                                         Receive usage heat-maps, AI analytics, visually mapped usage patterns,
                                         survey results, user directed feedback, and accessibility, performance and
                                         discoverability reviews. Build a user-fluent experience.

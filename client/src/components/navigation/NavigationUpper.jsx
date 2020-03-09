@@ -102,8 +102,8 @@ class NavigationUpper extends Component {
         return (
             <div>
                 <li className={"nav-li"}>
-                    <Link to={'/posts/new'} className={"nav-li-a"}>
-                        <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1578096333/UserFluent/Navbar%20Upper%20Icons/upload_qubv9y.svg"} alt={"Upload"} className={"nav-icon"}/>
+                    <Link to={'/dashboard'} className={"nav-li-a"}>
+                        <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1583715299/UserFluent/dashboard_xff6i0.svg"} alt={"Upload"} className={"nav-icon dashboard-icon"}/>
                     </Link>
                 </li>
 
