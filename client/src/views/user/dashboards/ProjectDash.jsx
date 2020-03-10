@@ -24,7 +24,7 @@ class ProjectDash extends Component {
 
                         <Link to={'/posts/new'}>
                             <button className={'button is-large project-new-button'}>
-                                + Add new project
+                                + New project
                             </button>
                         </Link>
 
