@@ -1,15 +1,16 @@
 .dash-side-nav {
   position: fixed;
   height: calc(100vh - 40px);
+  padding-top: 10px;
   left: 0;
   bottom: 0;
   background-color: #ffffff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
-  width: 300px;
+  width: 220px;
 }
 
 .dash-content-container {
-  margin-left: 300px;
+  margin-left: 220px;
 }
 
 .project-header {
@@ -27,4 +28,25 @@
   background-color: #f6f6f6;
   border: 1px dashed #DBDBDB;
   border-radius: 3px;
+}
+
+.side-nav-row {
+  padding: 20px;
+  text-align: left;
+
+  &:hover {
+    background-color: #f7f7f7;
+  }
+}
+
+.side-nav-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #373737;
+
+}
+
+.side-nav-icon {
+  height: 19px;
+  margin-bottom: -3px;
 }
