@@ -14,12 +14,12 @@ const ProjectSideNav = () => {
                 </div>
             </Link>
 
-            <a href={'#'} className={'side-nav-link'}>
+            <Link to={'/profile'} className={'side-nav-link'}>
                 <div className={'side-nav-row'}>
                     <span><img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583807128/UserFluent/user-dash-icon_atrsle.svg'} className={'side-nav-icon'}/></span>
                     User Dashboard
                 </div>
-            </a>
+            </Link>
 
             <a href={'#'} className={'side-nav-link'}>
                 <div className={'side-nav-row'}>
@@ -28,12 +28,12 @@ const ProjectSideNav = () => {
                 </div>
             </a>
 
-            <a href={'#'} className={'side-nav-link'}>
+            <Link to={'/settings'} className={'side-nav-link'}>
                 <div className={'side-nav-row'}>
                     <span><img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583804170/UserFluent/settings-dash-icon_ynmimx.svg'} className={'side-nav-icon'}/></span>
                     Settings
                 </div>
-            </a>
+            </Link>
 
             <a href={'#'} className={'side-nav-link'}>
                 <div className={'side-nav-row'}>

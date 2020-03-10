@@ -40,6 +40,7 @@ import Pricing from "./views/static/Pricing";
 import Tutorial from "./views/static/Tutorial";
 import Home from "./views/static/Home";
 import ProjectDash from "./views/user/dashboards/ProjectDash";
+import Settings from "./views/user/Settings";
 //import HomeLanding from "./views/static/home-old/HomeLanding";
 
 
@@ -61,9 +62,9 @@ function App() {
                 <Route exact path={'/explore'} component={PostIndex} />
                 <Route exact path={'/posts/new'} component={NewPost} />
                 <Route exact path={'/about'} component={About} />
-                <Route exact path={'/profile/settings'} component={ProfileSettings}/>
+                <Route exact path={'/settings'} component={Settings}/>
                 <Route exact path={'/show/post/:id'} component={ShowPost} />
-                <Route exact path={'/show/userprofile/:id'} component={ShowProfile} />
+                <Route exact path={'/profile'} component={ShowProfile} />
                 <Route exact path={'/dashboard'} component={ProjectDash}/>
                 <Route exact path={'/welcome'} component={GettingStarted}/>
 

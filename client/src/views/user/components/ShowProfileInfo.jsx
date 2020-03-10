@@ -2,6 +2,7 @@
 
 import "../profile.scss"
 import React, { Component } from 'react'
+import axios from "axios";
 
 // NOTE this component should be changed to a functional component with props passed in
 class ShowProfileInfo extends Component {
@@ -14,27 +15,79 @@ class ShowProfileInfo extends Component {
     }
 
     componentDidMount() {
-        fetch('/api/v1/users/user_info/' + this.props.user_id)
-            .then(current_user => current_user.json())
-            .then(current_user => {
+        const token = localStorage.getItem('access-token');
+        const client = localStorage.getItem('client');
+        const uid = localStorage.getItem('uid');
+
+        axios.get('/api/v1/user', {
+            headers: {'Content-Type': 'application/json', 'access-token' : token, 'client':client, 'uid': uid}
+        })
+            .then(data => data)
+            .then(data => {
+                console.log(data);
                 this.setState({
-                    current_user: current_user
+                    current_user: data.data,
+                    logged_in: true,
                 })
+            })
+            .catch((error) => {
+                console.log('request failed');
+                console.log(error)
             });
     }
 
     renderUserInfo = () => {
         let user = this.state.current_user;
         return(
-            <ul className={"profile-info-container"}>
-                <li className={"profile-info-container-li"}>
-                    <div className={"profile-avatar-container"}>
-                        <img src={user.avatar_large} alt={"user avatar"} className={"profile-avatar-large"}/>
-                        <br/>
-                        <div className={"profile-info-title"}>{user.username}</div>
-                    </div>
-                </li>
+            <div className={"profile-info-container"}>
+                <div className={'level'}>
+                    <div className={'level-left'}>
 
+
+                        <div className={"profile-avatar-container level-item"}>
+                            <img src={user.avatar_large} alt={"user avatar"} className={"profile-avatar-large"}/>
+                            <br/>
+                            <div className={"profile-info-title"}>{user.username}</div>
+                        </div>
+
+                        <div className={'profile-text-col level-item'}>
+                            <div className={"profile-info-text"}>
+                                <strong className={"profile-info-title"}>
+                                    Name:
+                                </strong>
+                                &nbsp; {user.name}
+                            </div>
+                            <div className={"profile-info-text"}>
+                                <strong className={"profile-info-title"}>
+                                    Location:
+                                </strong>
+                                &nbsp; {user.location}
+                            </div>
+                            <div className={"profile-info-text"}>
+                                <strong className={"profile-info-title"}>
+                                    Work:
+                                </strong>
+                                &nbsp; {user.company}
+                            </div>
+                            <div className={"profile-info-text"}>
+                                <strong className={"profile-info-title"}>
+                                    Contact:
+                                </strong>
+                                &nbsp; {user.contact}
+                            </div>
+                            <div className={"profile-info-text"}>
+                                <strong className={"profile-info-title"}>
+                                    Media:
+                                </strong>
+                                &nbsp; {user.media}
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                {/*
                 <li className={"profile-info-container-li"}>
                     <div className={"name-and-etc-container"}>
                         <ul>
@@ -97,7 +150,7 @@ class ShowProfileInfo extends Component {
                     </div>
                 </li>
                 */}
-            </ul>
+            </div>
         );
     };
 

@@ -115,7 +115,7 @@ class ShowPost extends Component {
                                         <div className="bold-title"> {post.title} </div>
                                     </div>
 
-                                    <div className={"post-main-content"}>
+                                    <div className={"post-main-content"}> {/* TODO: Bulma content class */}
                                         <div dangerouslySetInnerHTML={{__html: post.content}}/>
                                         {/*post.content*/}
                                     </div>

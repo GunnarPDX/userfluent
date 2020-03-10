@@ -119,12 +119,12 @@ class NavigationUpper extends Component {
 
                             <div className={"dropdown-divider"}/>
 
-                            <Link to={`/show/userprofile/${this.state.current_user.id}`} className={"nav-option nav-text"}>
+                            <Link to={'/profile'} className={"nav-option nav-text"}>
                                 <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1578171511/UserFluent/Navbar%20Upper%20Icons/nav-user-light_axu9uj.svg"} className={"nav-svg"} alt={"profile"}/>
                                 Profile
                             </Link>
 
-                            <Link to={'/profile/settings'} className={"nav-option nav-text"}>
+                            <Link to={'/settings'} className={"nav-option nav-text"}>
                                 <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1578171547/UserFluent/Navbar%20Upper%20Icons/nav-settings-light_alnbfz.svg"} className={"nav-svg"} alt={"settings"}/>
                                 Settings
                             </Link>

@@ -1,4 +1,5 @@
 // ShowProfile is a profile view that shows all of the users posts and their public info
+// TODO: Update component name, ShowProfile -> Profile -- no longer a public view w/ :id routing
 
 import '../posts/posts.scss';
 import './profile.scss';
@@ -12,6 +13,7 @@ import ShowProfileInfo from './components/ShowProfileInfo';
 
 // Post is a component for each individual post tile
 import Post from '../posts/components/Post';
+import ProjectSideNav from "./dashboards/components/ProjectSideNav";
 
 // Initialize the image spring grid
 const Grid = makeResponsive(SpringGrid, {
@@ -29,6 +31,7 @@ class ShowProfile extends Component {
         super(props);
     }
 
+    /*
     componentDidMount() {
         // NOTE MAKE THIS AXIOS
 
@@ -43,6 +46,7 @@ class ShowProfile extends Component {
             })
     }
 
+
     renderPosts = () => {
         return this.state.posts.map(post => {
             let props = {
@@ -55,31 +59,23 @@ class ShowProfile extends Component {
             )
         })
     };
+    */
 
     render() {
         return (
             <div>
+                <ProjectSideNav/>
+                <div className={'dash-content-container'}>
 
-                <div className={'row'}>
-                    <ShowProfileInfo user_id={this.props.match.params.id}/>
+
+                    <div className={'row'}>
+                        <ShowProfileInfo/>
+                    </div>
+                    <div className={'content-spacer'}/>
+
+
+
                 </div>
-                <div className={'content-spacer'}/>
-
-                <div className={'row'}>
-                    <Grid
-                        component={'ul'}
-                        columns={3}
-                        columnWidth={370}
-                        gutterWidth={20}
-                        gutterHeight={20}
-                        itemHeight={315}
-                        springConfig={{ stiffness: 170, damping: 26 }}
-                        className={'posts-container'}
-                    >
-                        {this.renderPosts()}
-                    </Grid>
-                </div>
-
             </div>
         )
     }
