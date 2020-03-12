@@ -21,7 +21,7 @@ class ProfileSettings extends Component {
         name: '',
         location: '',
         contact: '',
-        media: '',
+        media: 'empty',
         company: '',
         image_file: null,
         image_preview: null,
@@ -244,12 +244,14 @@ class ProfileSettings extends Component {
                             </p>
                         </div>
 
+                        {/*
                         <div className={"settings-container"}>
                             <p className={"form-row"}>
                                 <label htmlFor="media" className={"form-field-title"}>Media </label>
                                 <input type="text" name="media" value={this.state.media} onChange={this.handleChange} className={"uf-form-field form-right"}/>
                             </p>
                         </div>
+                        */}
 
                         <div className={"settings-container"}>
                             <p className={"form-row"}>

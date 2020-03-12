@@ -4,7 +4,7 @@
 module Api::V1
   class UserController < ApplicationController
 
-    before_action :find_user_posts, only: %i[user_profile]
+    before_action :find_user_posts, only: %i[user_posts]
 
 
     def index
@@ -23,7 +23,7 @@ module Api::V1
       end
     end
 
-    def user_profile
+    def user_posts
       if user_signed_in?
         render json: @user_posts, each_serializer: PostWLikedSerializer
       else

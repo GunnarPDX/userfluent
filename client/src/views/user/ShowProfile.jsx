@@ -14,6 +14,7 @@ import ShowProfileInfo from './components/ShowProfileInfo';
 // Post is a component for each individual post tile
 import Post from '../posts/components/Post';
 import ProjectSideNav from "./dashboards/components/ProjectSideNav";
+import ProfileSettings from "./ProfileSettings";
 
 // Initialize the image spring grid
 const Grid = makeResponsive(SpringGrid, {
@@ -70,6 +71,8 @@ class ShowProfile extends Component {
 
                     <div className={'row'}>
                         <ShowProfileInfo/>
+
+                        <ProfileSettings/>
                     </div>
                     <div className={'content-spacer'}/>
 

@@ -1,15 +1,14 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
 import ProjectSideNav from "./dashboards/components/ProjectSideNav";
 
-class Settings extends Component {
+class Help extends Component {
     render() {
         return (
             <div>
                 <ProjectSideNav/>
                 <div className={'dash-content-container'}>
 
-                    Settings
-
+                    Help
 
                 </div>
             </div>
@@ -17,4 +16,4 @@ class Settings extends Component {
     }
 }
 
-export default Settings;
+export default Help;

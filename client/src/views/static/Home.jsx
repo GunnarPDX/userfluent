@@ -35,7 +35,7 @@ class Home extends Component {
                         </div>
                         <div className={'level-right'}>
                             <div className={'landing-img-container'}>
-                                <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583445380/UserFluent/home-landing-img_vgtuwx.svg'} alt={'porduct image'} className={'landing-preview-image'}/>
+                                <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583877280/UserFluent/landing-header-image_cov2jq.svg'} alt={'porduct image'} className={'landing-preview-image'}/>
                             </div>
                         </div>
                     </div>

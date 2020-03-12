@@ -75,12 +75,16 @@ class ShowProfileInfo extends Component {
                                 </strong>
                                 &nbsp; {user.contact}
                             </div>
+
+                            {/*
                             <div className={"profile-info-text"}>
                                 <strong className={"profile-info-title"}>
                                     Media:
                                 </strong>
                                 &nbsp; {user.media}
                             </div>
+                            */}
+
                         </div>
 
 

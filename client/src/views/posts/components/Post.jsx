@@ -32,6 +32,8 @@ const Post = (props) => {
                     <div onClick={() => {handleShowPost(props)}} className={'cursor-pointer'}>
                         <div className={'post-image-placeholder'}>
                             <img src={props.post.thumbnail} alt={'post image'} className={'image-fade'}/>
+
+                            {/*
                             <span className={'tumbnail-hover-info'}>
                                 <span className={'post-hover-avatar'}>
                                     <img src={props.post.user.avatar_small} alt={'profile avatar'} className={'post-hover-avatar'}/>
@@ -44,11 +46,13 @@ const Post = (props) => {
                                 <a onClick={(e) => {handleShowProfile(e, props)}} className={'post-hover-username'}>
                                     By: {props.post.user.username}
                                 </a>
-                                */}
+                                *}
                             </span>
                             <div className={'post-hover-title-container'}>
                                 <div className={'post-hover-title'}>{props.post.title}</div>
                             </div>
+                            */}
+
                         </div>
                     </div>
 

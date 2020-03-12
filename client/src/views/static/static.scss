@@ -59,10 +59,24 @@
   //animation: text-focus-in 1.1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 
   float: right;
+  height: 40vw;
   padding-right: 20px;
+
+  //position: relative;
+  //height: 0;
+  /* Formula is: (height / width * 100%) */
+  //padding-top: 40vw;
+
   //height: auto;
-  max-width: 40vw;
   //min-width: 500px;
+}
+
+.landing-preview-image {
+  //position: absolute;
+  //top: 0;
+  //left: 0;
+  max-width: 40vw;
+  height: auto;
 }
 
 .landing-header-container {
@@ -126,10 +140,6 @@
     filter: blur(0px);
     opacity: 1;
   }
-}
-
-.landing-preview-image {
-
 }
 
 

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       resources :user, only: %i[index update] do
         collection do
           get '/user_info', to: 'user#user_info'
+          get '/posts', to: 'user#user_posts'
         end
       end
 

@@ -41,6 +41,8 @@ import Tutorial from "./views/static/Tutorial";
 import Home from "./views/static/Home";
 import ProjectDash from "./views/user/dashboards/ProjectDash";
 import Settings from "./views/user/Settings";
+import Billing from "./views/user/Billing";
+import Help from "./views/user/Help";
 //import HomeLanding from "./views/static/home-old/HomeLanding";
 
 
@@ -59,13 +61,18 @@ function App() {
                 <Route exact path={'/pricing'} component={Pricing}/>
                 <Route exact path={'/about'} component={About}/>
                 <Route exact path={'/tutorial'} component={Tutorial}/>
-                <Route exact path={'/explore'} component={PostIndex} />
-                <Route exact path={'/posts/new'} component={NewPost} />
-                <Route exact path={'/about'} component={About} />
-                <Route exact path={'/settings'} component={Settings}/>
-                <Route exact path={'/show/post/:id'} component={ShowPost} />
-                <Route exact path={'/profile'} component={ShowProfile} />
+                <Route exact path={'/about'} component={About}/>
+
+                <Route exact path={'/explore'} component={PostIndex}/>
+                <Route exact path={'/show/post/:id'} component={ShowPost}/>
+
                 <Route exact path={'/dashboard'} component={ProjectDash}/>
+                <Route exact path={'/posts/new'} component={NewPost}/>
+                <Route exact path={'/profile'} component={ShowProfile}/>
+                <Route exact path={'/billing'} component={Billing}/>
+                <Route exact path={'/settings'} component={Settings}/>
+                <Route exact path={'/help'} component={Help}/>
+
                 <Route exact path={'/welcome'} component={GettingStarted}/>
 
                 <Route component={NotFound}/>

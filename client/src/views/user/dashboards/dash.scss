@@ -13,7 +13,18 @@
   margin-left: 220px;
 }
 
-.project-header {
+.dash-project-container {
+  width: calc(100% - 40px);
+  margin: 20px;
+  padding: 10px;
+
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  border-radius: 3px;
+
+}
+
+.new-project-container {
   width: calc(100% - 40px);
   margin: 20px;
   padding: 10px;
@@ -52,4 +63,49 @@
 .side-nav-icon {
   height: 19px;
   margin-bottom: -4px;
+}
+
+.dashboard-project-info-box {
+  padding: 10px;
+  height: 295px;
+  width: 370px;
+  //background-color: #fcfcfc;
+  border: 1px dashed #f4f4f4;
+  border-radius: 3px;
+  text-align: left;
+  font-weight: bold;
+  color: #373737;
+
+  object-fit: contain;
+}
+
+.dashboard-project-button {
+  margin-bottom: 10px;
+}
+
+.grey-btn {
+  //background-color: #DBDBDB;
+  font-weight: bold;
+}
+
+.green-btn {
+  background: #00e6b7;
+  border: 1px solid #00e6b7;
+
+  color: #FFFFFF;
+
+  font-weight: bold;
+
+  &:hover {
+    border: 1px solid #00a97f;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  &:active {
+    border: 1px solid #00634a;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
 }

@@ -26,7 +26,7 @@ class About extends Component {
                     which gives us greater flexibility and speed to reliably deliver widespread logistical and analytical
                     design feedback. We have metamorphosed from a simple testing pipeline to a communication and design driven
                     research and analytics company whose biggest assets are its wealth of data and its innovative people.
-                    Our objective is to help you competently and distinctively engineer client-centered digital services.
+                    Our objective is to help you competently and distinctively engineer client-centered digital services whether your focus is B2B or B2C.
                 </p>
 
                 <br/>

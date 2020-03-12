@@ -102,15 +102,13 @@ class NavigationUpper extends Component {
         return (
             <div>
                 <li className={"nav-li"}>
-                    <Link to={'/dashboard'} className={"nav-li-a"}>
-                        <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1583715299/UserFluent/dashboard_xff6i0.svg"} alt={"Upload"} className={"nav-icon dashboard-icon"}/>
-                    </Link>
+
                 </li>
 
                 <li className={"nav-li"}>
                     <div className={"uf-dropdown"}>
 
-                        <Link to={`/show/userprofile/${this.state.current_user.id}`} className={"dropbtn"}>
+                        <Link to={'/dashboard'} className={"dropbtn"}>
                             <img src={this.state.current_user.avatar_small} alt={" "} className={"profile"}/>
                         </Link>
 
@@ -118,6 +116,10 @@ class NavigationUpper extends Component {
                             <div className={"nav-text"}> Signed in as: {this.state.current_user.username}</div>
 
                             <div className={"dropdown-divider"}/>
+
+                            <Link to={'/dashboard'} className={"nav-option nav-text"}>
+                                Dashboard
+                            </Link>
 
                             <Link to={'/profile'} className={"nav-option nav-text"}>
                                 <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1578171511/UserFluent/Navbar%20Upper%20Icons/nav-user-light_axu9uj.svg"} className={"nav-svg"} alt={"profile"}/>

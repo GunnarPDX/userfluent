@@ -10,23 +10,23 @@ const ProjectSideNav = () => {
             <Link to={'/dashboard'} className={'side-nav-link'}>
                 <div className={'side-nav-row'}>
                     <span><img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583807128/UserFluent/dashboard_gn05qq.svg'} className={'side-nav-icon'}/></span>
-                    Project Dashboard
+                    Dashboard
                 </div>
             </Link>
 
             <Link to={'/profile'} className={'side-nav-link'}>
                 <div className={'side-nav-row'}>
                     <span><img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583807128/UserFluent/user-dash-icon_atrsle.svg'} className={'side-nav-icon'}/></span>
-                    User Dashboard
+                    Profile
                 </div>
             </Link>
 
-            <a href={'#'} className={'side-nav-link'}>
+            <Link to={'/billing'} className={'side-nav-link'}>
                 <div className={'side-nav-row'}>
                     <span><img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583807128/UserFluent/billing-dash-icon_km7fnf.svg'} className={'side-nav-icon'}/></span>
                     Billing
                 </div>
-            </a>
+            </Link>
 
             <Link to={'/settings'} className={'side-nav-link'}>
                 <div className={'side-nav-row'}>
@@ -35,12 +35,12 @@ const ProjectSideNav = () => {
                 </div>
             </Link>
 
-            <a href={'#'} className={'side-nav-link'}>
+            <Link to={'/help'} className={'side-nav-link'}>
                 <div className={'side-nav-row'}>
                     <span><img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583804170/UserFluent/help-dash-icon_j2f0i4.svg'} className={'side-nav-icon'}/></span>
                     Help
                 </div>
-            </a>
+            </Link>
 
 
         </div>
