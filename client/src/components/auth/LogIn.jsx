@@ -2,6 +2,7 @@ import "./auth.scss";
 import '../forms/forms.scss'
 import React, { Component } from 'react';
 import LoadingButton from '../loader/LoadingButton';
+import { withRouter } from "react-router-dom";
 import { runValidityCheck } from '../helpers/InputVerification'
 import axios from "axios";
 
@@ -57,6 +58,9 @@ class LogIn extends Component {
                 window.localStorage.setItem('client', res.headers['client']);
                 window.localStorage.setItem('uid', res.headers['uid']);
                 currentComponent.setState({loading: 'success'});
+
+                console.log('reached login');
+                currentComponent.props.history.push('/dashboard');
                 window.location.reload(false);
             })
             .catch(function(err) {
@@ -112,4 +116,4 @@ class LogIn extends Component {
         )
     }
 }
-export default LogIn;
+export default withRouter(LogIn);

@@ -65,6 +65,7 @@ class Registration extends Component {
                 window.localStorage.setItem('client', res.headers['client']);
                 window.localStorage.setItem('uid', res.headers['uid']);
                 currentComponent.setState({loading: 'success'});
+
                 currentComponent.props.history.push('/welcome');
                 window.location.reload(false);
             })

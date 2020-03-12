@@ -6,6 +6,7 @@ import ProjectSideNav from "./components/ProjectSideNav";
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import Post from "../../posts/components/Post";
+import ProgressBar from 'react-customizable-progressbar'
 
 class ProjectDash extends Component {
 
@@ -79,6 +80,18 @@ class ProjectDash extends Component {
                                     </button>
 
                                 </div>
+                            </div>
+
+                            <div className={'level-item'}>
+                                <ProgressBar
+                                    progress={60}
+                                    radius={100}
+                                    strokeColor={'#02E6B7'}
+                                >
+                                    <div className="indicator">
+                                        <div>60%</div>
+                                    </div>
+                                </ProgressBar>
                             </div>
 
                         </div>

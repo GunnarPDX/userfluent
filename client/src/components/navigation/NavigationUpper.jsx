@@ -28,7 +28,8 @@ class NavigationUpper extends Component {
         localStorage.removeItem('access-token');
         localStorage.removeItem('client');
         localStorage.removeItem('uid');
-        window.location.reload(false);
+
+        setTimeout(function(){ window.location.reload(false); }, 300);
     };
 
 
@@ -83,10 +84,10 @@ class NavigationUpper extends Component {
                     <li className={"nav-li nav-log-in"}>
                         <div className="field has-addons">
                             <p className="control">
-                                <button className={"button login-color is-small is-rounded"} onClick={this.showRegistration}> Sign Up </button>
+                                <button className={"button login-color is-small "} onClick={this.showRegistration}> Sign Up </button>
                             </p>
                             <p className="control">
-                                <button className={"button login-color is-small is-rounded"} onClick={this.showLogIn}> Log In </button>
+                                <button className={"button login-color is-small "} onClick={this.showLogIn}> Log In </button>
                             </p>
                         </div>
                     </li>
