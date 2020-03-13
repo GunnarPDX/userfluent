@@ -19,7 +19,7 @@ import NewPost from './views/posts/new/NewPost';
 import About from './views/static/About';
 
 // ProfileSettings allows users to manage their profile
-import ProfileSettings from "./views/user/ProfileSettings";
+import ProfileSettings from "./views/user/profile/ProfileSettings";
 
 // NavigationUpper serves as the main nav-bar which is always present
 import NavigationUpper from "./components/navigation/NavigationUpper";
@@ -28,7 +28,7 @@ import NavigationUpper from "./components/navigation/NavigationUpper";
 import ShowPost from "./views/posts/show/ShowPost"
 
 // ShowProfile shows a users public profile
-import ShowProfile from "./views/user/ShowProfile";
+import ShowProfile from "./views/user/profile/ShowProfile";
 
 // GettingStarted is the landing page for new users
 import GettingStarted from './views/welcome/GettingStarted';
@@ -39,9 +39,9 @@ import NotFound from "./views/static/errors/NotFound";
 import Pricing from "./views/static/Pricing";
 import Tutorial from "./views/static/Tutorial";
 import Home from "./views/static/Home";
-import ProjectDash from "./views/user/dashboards/ProjectDash";
+import ProjectDash from "./views/user/dashboard/ProjectDash";
 import Settings from "./views/user/Settings";
-import Billing from "./views/user/Billing";
+import Billing from "./views/user/payments/Billing";
 import Help from "./views/user/Help";
 //import HomeLanding from "./views/static/home-old/HomeLanding";
 

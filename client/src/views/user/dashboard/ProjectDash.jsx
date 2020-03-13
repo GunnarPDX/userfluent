@@ -59,10 +59,10 @@ class ProjectDash extends Component {
                             <div className={'level-item'}>
                                 <div className={'dashboard-project-info-box'}>
 
-                                    Name: {post.title}
+                                    Name: <span className={'dash-small-text'}>{post.title}</span>
                                     <br/>
                                     <br/>
-                                    Uploaded: {post.time}
+                                    Uploaded: <span className={'dash-small-text'}>{post.time}</span>
                                     <br/>
                                     <br/>
 
@@ -83,15 +83,23 @@ class ProjectDash extends Component {
                             </div>
 
                             <div className={'level-item'}>
+                                <div className={'dashboard-progress-info-box'}>
+
                                 <ProgressBar
-                                    progress={60}
+                                    progress={0}
                                     radius={100}
                                     strokeColor={'#02E6B7'}
                                 >
                                     <div className="indicator">
-                                        <div>60%</div>
+                                        <div>0%</div>
                                     </div>
                                 </ProgressBar>
+
+                                <div>
+                                    No tests in progress.
+                                </div>
+
+                                </div>
                             </div>
 
                         </div>

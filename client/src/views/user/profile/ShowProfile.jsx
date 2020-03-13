@@ -1,7 +1,7 @@
 // ShowProfile is a profile view that shows all of the users posts and their public info
 // TODO: Update component name, ShowProfile -> Profile -- no longer a public view w/ :id routing
 
-import '../posts/posts.scss';
+import '../../posts/posts.scss';
 import './profile.scss';
 import React, { Component } from 'react';
 
@@ -9,12 +9,11 @@ import React, { Component } from 'react';
 import { SpringGrid, makeResponsive } from 'react-stonecutter';
 
 // ShowProfileInfo displays the users public info such as social media handles
-import ShowProfileInfo from './components/ShowProfileInfo';
+import ShowProfileInfo from '../components/ShowProfileInfo';
 
 // Post is a component for each individual post tile
-import Post from '../posts/components/Post';
-import ProjectSideNav from "./dashboards/components/ProjectSideNav";
-import ProfileSettings from "./ProfileSettings";
+import ProjectSideNav from "../dashboard/components/ProjectSideNav";
+import ProfileSettings from "../profile/ProfileSettings";
 
 // Initialize the image spring grid
 const Grid = makeResponsive(SpringGrid, {

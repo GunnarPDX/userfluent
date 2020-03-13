@@ -1,6 +1,6 @@
 // ShowProfileInfo displays the users public info such as social media handles.
 
-import "../profile.scss"
+import "../profile/profile.scss"
 import React, { Component } from 'react'
 import axios from "axios";
 

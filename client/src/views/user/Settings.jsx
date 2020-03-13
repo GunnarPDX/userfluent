@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import ProjectSideNav from "./dashboards/components/ProjectSideNav";
+import ProjectSideNav from "./dashboard/components/ProjectSideNav";
 
 class Settings extends Component {
     render() {

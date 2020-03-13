@@ -2,15 +2,15 @@
 // ProfileSettings is a form that allows users to manage their profile.
 
 import './profile.scss';
-import '../../components/forms/forms.scss';
-import '../../components/loader/submitButtons.scss';
+import '../../../components/forms/forms.scss';
+import '../../../components/loader/submitButtons.scss';
 
 import React, { Component } from 'react';
 import Dropzone from "react-dropzone";
 import axios from 'axios';
 
 // LoadingButton is a submission button component with a fancy animation
-import LoadingButton from '../../components/loader/LoadingButton';
+import LoadingButton from '../../../components/loader/LoadingButton';
 
 
 class ProfileSettings extends Component {

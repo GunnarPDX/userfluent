@@ -10,7 +10,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
 // ProfileSettings contains the form for adding/updating the users profile
-import ProfileSettings from "../user/ProfileSettings";
+import ProfileSettings from "../user/profile/ProfileSettings";
 
 // Tutorial contains the app usage instructions
 import Tutorial from "../static/Tutorial";

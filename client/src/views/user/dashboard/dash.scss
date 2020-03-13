@@ -11,11 +11,13 @@
 
 .dash-content-container {
   margin-left: 220px;
+  //padding: 10px;
 }
 
 .dash-project-container {
-  width: calc(100% - 40px);
-  margin: 20px;
+  //width: calc(100% - 40px);
+  max-width: 1045px;
+  margin: 20px auto;
   padding: 10px;
 
   background-color: #ffffff;
@@ -25,8 +27,9 @@
 }
 
 .new-project-container {
-  width: calc(100% - 40px);
-  margin: 20px;
+  //width: calc(100% - 40px);
+  max-width: 1045px;
+  margin: 20px auto;
   padding: 10px;
 
   background-color: #f0f0f0;
@@ -79,6 +82,10 @@
   object-fit: contain;
 }
 
+.dash-small-text {
+  font-weight: normal;
+}
+
 .dashboard-project-button {
   margin-bottom: 10px;
 }
@@ -108,6 +115,20 @@
     text-decoration: none;
   }
 
+}
+
+.dashboard-progress-info-box {
+  padding: 10px;
+  height: 295px;
+  width: auto;
+  //background-color: #fcfcfc;
+  border: 1px dashed #f4f4f4;
+  border-radius: 3px;
+  text-align: center;
+  font-weight: bold;
+  color: #373737;
+
+  object-fit: contain;
 }
 
 .indicator {
