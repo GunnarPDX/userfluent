@@ -3,6 +3,7 @@
   position: fixed;
   height: fit-content;
   min-height: fit-content;
+  z-index: 999;
 
   width: 35%;
   min-width: 400px;
@@ -34,7 +35,7 @@
 }
 
 .auth-modal-header {
-  font-family: "Ramaraja", serif;
+  //font-family: "Ramaraja", serif;
   font-size: 19pt;
   font-weight: bold;
   padding: 30px;

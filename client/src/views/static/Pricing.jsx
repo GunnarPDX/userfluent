@@ -4,11 +4,36 @@ import '../../components/forms/packages/packages.scss'
 import React, { Component } from 'react';
 import LandingNav from "./components/LandingNav";
 import BackdropLines from "./components/BackdropLines";
+import LogIn from "../../components/auth/LogIn";
+import Registration from "../../components/auth/Registration";
 
 class Pricing extends Component {
+    state = {
+        logged_in: false,
+        showLogIn: false,
+        showRegistration: false
+    };
+
+    showLogIn = (e) => {
+        this.setState({
+            showLogIn: !this.state.showLogIn,
+            showRegistration: false
+        });
+    };
+
+    showRegistration = (e) => {
+        this.setState({
+            showRegistration: !this.state.showRegistration,
+            showLogIn: false
+        });
+    };
+
     render() {
         return (
             <div>
+                <LogIn show={this.state.showLogIn} toggleModal={this.showRegistration} onClose={this.showLogIn} />
+                <Registration show={this.state.showRegistration} toggleModal={this.showLogIn} onClose={this.showRegistration} />
+
                 <LandingNav/>
                 <div className={'nav-spacer'}/>
 
@@ -16,10 +41,6 @@ class Pricing extends Component {
                 <p className={'landing-header-text'} id={'text'}>
                     <span className={'underline--magical'}>Our pricing.</span>
                 </p>
-
-
-                {/*<img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1583395503/UserFluent/pricing_itgawz.svg'} alt={'pricing'} className={'pricing-header-image'}/>*/}
-
 
                 <div className={'columns price-container'}>
 
@@ -37,9 +58,9 @@ class Pricing extends Component {
                             </p>
                         </div>
 
-                        <div className={'button package-btn'}>
+                        <button onClick={this.showRegistration} className={'button package-btn'}>
                             Get Started For Free
-                        </div>
+                        </button>
 
                         <div className={'package-title-subheader'}>
                             1 time use free trial!
@@ -78,9 +99,9 @@ class Pricing extends Component {
                             </p>
                         </div>
 
-                        <div className={'button package-btn-2'}>
+                        <button onClick={this.showRegistration} className={'button package-btn-2'}>
                             Purchase Startup Package
-                        </div>
+                        </button>
 
                         <div className={'package-title-subheader'}>
                             Perfect for startups and small businesses.
@@ -117,9 +138,9 @@ class Pricing extends Component {
                             price upon request
                         </div>
 
-                        <div className={'button package-btn'}>
+                        <button onClick={this.showRegistration} className={'button package-btn'}>
                             Contact Us
-                        </div>
+                        </button>
 
                         <div className={'package-title-subheader'}>
                             Bespoke solutions for large businesses.

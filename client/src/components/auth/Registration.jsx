@@ -91,15 +91,8 @@ class Registration extends Component {
                         &times;
                     </button>
 
-
                     <h1 className={'auth-modal-header'}>Sign Up</h1>
 
-                    {/*
-                    <a className={'auth-modal-link-alert'} href={'https://userfluent-test-deployment.herokuapp.com/users/sign_up'}>
-                        Is this page not working?
-                    </a>
-                    <br/>
-                    */}
                     <a className={'auth-modal-link'} onClick={this.props.toggleModal}>
                         Already have an account?
                     </a>
@@ -107,7 +100,7 @@ class Registration extends Component {
                     <form onSubmit={this.handleSubmit.bind(this)} id={'login-form'}>
 
                         <div className={'uf-modal-form-item-row'}>
-                            <input type={'text'} name={'username'} placeholder={'Username (A-Z, Numbers, _ - , and must be 3-16 characters)'} className={'uf-modal-form-field'} onChange={this.handleChange} id={'username'}/>
+                            <input type={'text'} name={'username'} placeholder={'Username'} className={'uf-modal-form-field'} onChange={this.handleChange} id={'username'}/>
                         </div>
 
                         <div className={'uf-modal-form-item-row'}>

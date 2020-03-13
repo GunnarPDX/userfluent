@@ -47,7 +47,7 @@ class GettingStarted extends Component {
                     Ready?
                 </div>
 
-                <Link to={'/'} className={'welcome-finished-button'}>
+                <Link to={'/dashboard'} className={'welcome-finished-button'}>
                     Take me to the app!
                 </Link>
 

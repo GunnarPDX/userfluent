@@ -3,12 +3,47 @@ import React, { Component } from 'react';
 import LandingNav from "./components/LandingNav";
 import BackdropLines from "./components/BackdropLines";
 import Footer from "../../components/navigation/Footer";
+import LogIn from "../../components/auth/LogIn";
+import Registration from "../../components/auth/Registration";
 
 class Home extends Component {
+
+    state = {
+        logged_in: false,
+        showLogIn: false,
+        showRegistration: false
+    };
+
+    showLogIn = (e) => {
+        this.setState({
+            showLogIn: !this.state.showLogIn,
+            showRegistration: false
+        });
+    };
+
+    showRegistration = (e) => {
+        this.setState({
+            showRegistration: !this.state.showRegistration,
+            showLogIn: false
+        });
+    };
+
+    renderSignup = () => {
+        if(this.state.logged_in){
+            return false;
+        }else return(
+            <button onClick={this.showRegistration} className={'button is-large home-btn'}>
+                Try it free
+            </button>
+        )
+    };
 
     render() {
         return (
             <div>
+                <LogIn show={this.state.showLogIn} toggleModal={this.showRegistration} onClose={this.showLogIn} />
+                <Registration show={this.state.showRegistration} toggleModal={this.showLogIn} onClose={this.showRegistration} />
+
                 <LandingNav/>
                 <div className={'nav-spacer'}/>
 
@@ -27,9 +62,7 @@ class Home extends Component {
                                         survey results, user directed feedback, and accessibility, performance and
                                         discoverability reviews. Build a user-fluent experience.
                                     </p>
-                                    <button className={'button is-large home-btn'}>
-                                        Try it free
-                                    </button>
+                                    {this.renderSignup()}
                                 </div>
                             </div>
                         </div>

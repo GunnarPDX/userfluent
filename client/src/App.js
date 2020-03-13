@@ -39,7 +39,7 @@ import NotFound from "./views/static/errors/NotFound";
 import Pricing from "./views/static/Pricing";
 import Tutorial from "./views/static/Tutorial";
 import Home from "./views/static/Home";
-import ProjectDash from "./views/user/dashboard/ProjectDash";
+import MainDash from "./views/user/dashboard/MainDash";
 import Settings from "./views/user/Settings";
 import Billing from "./views/user/payments/Billing";
 import Help from "./views/user/Help";
@@ -66,7 +66,7 @@ function App() {
                 <Route exact path={'/explore'} component={PostIndex}/>
                 <Route exact path={'/show/post/:id'} component={ShowPost}/>
 
-                <Route exact path={'/dashboard'} component={ProjectDash}/>
+                <Route exact path={'/dashboard'} component={MainDash}/>
                 <Route exact path={'/posts/new'} component={NewPost}/>
                 <Route exact path={'/profile'} component={ShowProfile}/>
                 <Route exact path={'/billing'} component={Billing}/>

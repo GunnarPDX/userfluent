@@ -129,7 +129,7 @@ export function invalid_password(str) {
 
 export function invalid_username(str) {
     if(is_empty(str))return true;
-    else if(!only_typical_usernames(str))return true;
+    //else if(!only_typical_usernames(str))return true;
     //else if(!only_non_reserved_names(str))return true; not working
     else return false;
 }
