@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import axios from "axios";
 import Post from "../../posts/components/Post";
 import ProgressBar from 'react-customizable-progressbar'
+import ShowProfileInfo from "../profile/components/ShowProfileInfo";
+import UpperDashNav from "./components/UpperDashNav";
 
 class MainDash extends Component {
 
@@ -113,19 +115,11 @@ class MainDash extends Component {
             <div>
                 <ProjectSideNav/>
                 <div className={'dash-content-container'}>
+                    <UpperDashNav/>
 
                     {this.renderPosts() }
 
-                    <div className={'new-project-container'}>
 
-                        <Link to={'/posts/new'}>
-                            <button className={'button is-large project-new-button'}>
-                                + New project
-                            </button>
-                        </Link>
-
-
-                    </div>
 
                 </div>
             </div>

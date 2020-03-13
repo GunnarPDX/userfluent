@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 import { SpringGrid, makeResponsive } from 'react-stonecutter';
 
 // ShowProfileInfo displays the users public info such as social media handles
-import ShowProfileInfo from '../components/ShowProfileInfo';
+import ShowProfileInfo from './components/ShowProfileInfo';
 
 // Post is a component for each individual post tile
 import ProjectSideNav from "../dashboard/components/ProjectSideNav";

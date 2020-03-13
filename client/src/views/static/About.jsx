@@ -39,6 +39,7 @@ class About extends Component {
                 <br/>
 
 
+                {/*}
                 <p className={'landing-header-text'} id={'text'}>
                     Meet the team.
                 </p>
@@ -49,6 +50,7 @@ class About extends Component {
                         <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1580628734/ni81niit1fpbjojwpbrn.jpg'} alt={'profile-gunnar'} className={'about-profile-pic'}/>
                     </div>
                 </div>
+                */}
 
 
             </div>

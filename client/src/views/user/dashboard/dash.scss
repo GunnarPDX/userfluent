@@ -28,20 +28,28 @@
 
 .new-project-container {
   //width: calc(100% - 40px);
-  max-width: 1045px;
-  margin: 20px auto;
-  padding: 10px;
+  //max-width: 1045px;
+  width: 100%;
+  margin-bottom: 20px;
+  //margin: 20px auto;
+  padding: 5px;
 
   background-color: #f0f0f0;
-  border: 1px dashed #DBDBDB;
-  border-radius: 3px;
+  border-bottom: 1px dashed #DBDBDB;
+  //border-radius: 3px;
 
+}
+
+.dash-nav-add-margin {
+  margin: 5px !important;
+  //background-color: #00BF9C;
 }
 
 .project-new-button {
   background-color: #f6f6f6;
-  border: 1px dashed #DBDBDB;
+  //border: 1px dashed #DBDBDB;
   border-radius: 3px;
+  margin: 0;
 }
 
 .side-nav-row {
@@ -146,3 +154,4 @@
   color: #555;
   user-select: none;
 }
+
