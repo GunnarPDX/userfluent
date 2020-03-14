@@ -43,6 +43,8 @@ import MainDash from "./views/user/dashboard/MainDash";
 import Settings from "./views/user/Settings";
 import Billing from "./views/user/payments/Billing";
 import Help from "./views/user/Help";
+import ProjectDash from "./views/user/dashboard/project/ProjectDash";
+import NewTest from "./views/user/dashboard/project/NewTest";
 //import HomeLanding from "./views/static/home-old/HomeLanding";
 
 
@@ -64,10 +66,13 @@ function App() {
                 <Route exact path={'/about'} component={About}/>
 
                 <Route exact path={'/explore'} component={PostIndex}/>
-                <Route exact path={'/show/post/:id'} component={ShowPost}/>
+                <Route exact path={'/post/:id'} component={ShowPost}/>
 
                 <Route exact path={'/dashboard'} component={MainDash}/>
                 <Route exact path={'/posts/new'} component={NewPost}/>
+                <Route exact path={'/project'} component={ProjectDash}/>
+                <Route exact path={'/test/new'} component={NewTest}/>
+
                 <Route exact path={'/profile'} component={ShowProfile}/>
                 <Route exact path={'/billing'} component={Billing}/>
                 <Route exact path={'/settings'} component={Settings}/>

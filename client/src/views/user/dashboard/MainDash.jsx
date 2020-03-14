@@ -69,15 +69,24 @@ class MainDash extends Component {
                                     <button className={'button is-fullwidth dashboard-project-button grey-btn'}>
                                         Edit
                                     </button>
-                                    <button className={'button is-fullwidth dashboard-project-button grey-btn'}>
-                                        View Project
-                                    </button>
-                                    <button className={'button is-fullwidth dashboard-project-button grey-btn'}>
-                                        View Tests
-                                    </button>
-                                    <button className={'button is-fullwidth dashboard-project-button green-btn'}>
-                                        + Start Testing
-                                    </button>
+
+                                    <Link to={'/post/' + props.post.id}>
+                                        <button className={'button is-fullwidth dashboard-project-button grey-btn'}>
+                                            View Project
+                                        </button>
+                                    </Link>
+
+                                    <Link to={'/project'}>
+                                        <button className={'button is-fullwidth dashboard-project-button grey-btn'}>
+                                            View Tests
+                                        </button>
+                                    </Link>
+
+                                    <Link to={'/test/new'}>
+                                        <button className={'button is-fullwidth dashboard-project-button green-btn'}>
+                                            + Start Testing
+                                        </button>
+                                    </Link>
 
                                 </div>
                             </div>

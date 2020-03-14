@@ -11,7 +11,7 @@ import PostLike from '../components/PostLike';
 
 // This is for handling the link to the individual post - creates a route to the specific post
 function handleShowPost(props) {
-    props.history.push('/show/post/' + props.post.id);
+    props.history.push('/post/' + props.post.id);
 }
 
 // This is for handling the link to the profile
