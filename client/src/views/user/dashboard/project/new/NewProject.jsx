@@ -24,7 +24,7 @@ import PostAgree from "../../../../../components/legal/PostAgree";
 import ProjectSideNav from "../../components/ProjectSideNav";
 import UpperDashNav from "../../components/UpperDashNav";
 
-class NewPost extends Component {
+class NewProject extends Component {
 
     state = {
         title: '',
@@ -248,7 +248,7 @@ class NewPost extends Component {
 
           </div>
       )
-    }
+    };
 
     render() {
         return(
@@ -268,4 +268,4 @@ class NewPost extends Component {
     }
 }
 
-export default NewPost
+export default NewProject

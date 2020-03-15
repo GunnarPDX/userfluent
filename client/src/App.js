@@ -13,7 +13,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import PostIndex from './views/posts/index/PostIndex';
 
 // NewPost allows the user to create a new project
-import NewPost from './views/user/dashboard/project/new/NewPost';
+import NewProject from './views/user/dashboard/project/new/NewProject';
 
 // About serves as a static info page
 import About from './views/static/About';
@@ -69,7 +69,7 @@ function App() {
                 <Route exact path={'/post/:id'} component={ShowPost}/>
 
                 <Route exact path={'/dashboard'} component={MainDash}/>
-                <Route exact path={'/posts/new'} component={NewPost}/>
+                <Route exact path={'/posts/new'} component={NewProject}/>
                 <Route exact path={'/project'} component={ProjectDash}/>
                 <Route exact path={'/test/new'} component={NewTest}/>
 
