@@ -1,31 +1,28 @@
 // NewPost allows the user to create a new project.
 
-import "../../../components/forms/forms.scss";
+import "../../../../../components/forms/forms.scss";
+import '../../../../static/pricing.scss'
 
 import React, { Component } from 'react'
 import Dropzone from "react-dropzone";
 import axios from 'axios';
 
 // LoadingButton is a submission button component with a fancy animation
-import LoadingButton from '../../../components/loader/LoadingButton';
+import LoadingButton from '../../../../../components/loader/LoadingButton';
 
 // CategorySelect is a form component dropdown select for categories
-import CategorySelect from "../../../components/forms/fields/CategorySelect";
+import CategorySelect from "../../../../../components/forms/fields/CategorySelect";
 
 // PlatformSelect is a form component dropdown for platforms
-import PlatformSelect from "../../../components/forms/fields/PlatformSelect";
-
-// PackageSelect allows the user to select a product type
-import PackageSelect from "../../../components/forms/packages/PackageSelect";
+import PlatformSelect from "../../../../../components/forms/fields/PlatformSelect";
 
 // WYSIWYG - What You See Is What You Get form component
-import WYSIWYG from "../../../components/forms/wysiwyg/WYSIWYG";
-
-// AddOnSelect allows the user to select product add ons
-import AddOnSelect from "../../../components/forms/packages/AddOnSelect";
+import WYSIWYG from "../../../../../components/forms/wysiwyg/WYSIWYG";
 
 // PostAgree prompts the user to agree to the terms and conditions
-import PostAgree from "../../../components/legal/PostAgree";
+import PostAgree from "../../../../../components/legal/PostAgree";
+import ProjectSideNav from "../../components/ProjectSideNav";
+import UpperDashNav from "../../components/UpperDashNav";
 
 class NewPost extends Component {
 
@@ -137,7 +134,7 @@ class NewPost extends Component {
       width: '90%',
     };
 
-    render() {
+    renderForm = () => {
       let props = {
           loading: this.state.loading,
           form: 'new-post-form',
@@ -146,16 +143,6 @@ class NewPost extends Component {
 
       return (
           <div className={"uf-fade-in"}>
-
-              <div className={'top-banner'}>
-                  <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1582445518/UserFluent/Let_s_find_out_what_the_users_think_aehr3j.svg'} alt={'lets find out wat the users think'} className={'banner-image'}/>
-              </div>
-
-              <div className={"content-spacer"}/>
-
-              <div>
-                  <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1582347785/UserFluent/user-testing-illustration_hoitys.svg'} alt={'testing'}/>
-              </div>
 
               <div className={'form-row-title'}>
                   Add A Cover Photo
@@ -261,6 +248,23 @@ class NewPost extends Component {
 
           </div>
       )
+    }
+
+    render() {
+        return(
+            <div>
+                <ProjectSideNav/>
+                <div className={'dash-content-container'}>
+
+                    <p className={'landing-header-text'} id={'text'}>
+                        <span className={'underline--magical'}>New project</span>
+                    </p>
+
+                    {this.renderForm() }
+
+                </div>
+            </div>
+        )
     }
 }
 

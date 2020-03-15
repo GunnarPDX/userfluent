@@ -13,7 +13,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import PostIndex from './views/posts/index/PostIndex';
 
 // NewPost allows the user to create a new project
-import NewPost from './views/posts/new/NewPost';
+import NewPost from './views/user/dashboard/project/new/NewPost';
 
 // About serves as a static info page
 import About from './views/static/About';

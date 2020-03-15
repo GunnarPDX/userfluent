@@ -20,7 +20,6 @@ class MainDash extends Component {
         super(props);
     }
 
-
     componentDidMount() {
         const token = localStorage.getItem('access-token');
         const client = localStorage.getItem('client');
