@@ -13,9 +13,9 @@ class PackageSelect extends Component {
     };
 
     getClassNames = (option) => {
-        if(option === 1 && this.state.option1) return (' option-selected');
-        else if (option === 2 && this.state.option2) return (' option-selected');
-        else if (option === 3 && this.state.option3) return (' option-selected');
+        if(option === 1 && this.state.option1) return (' option-selected-1');
+        else if (option === 2 && this.state.option2) return (' option-selected-2');
+        else if (option === 3 && this.state.option3) return (' option-selected-3');
         else if (option === 4 && this.state.option4) return (' option-selected');
     };
 
@@ -35,7 +35,7 @@ class PackageSelect extends Component {
 
                 <div className={'columns price-container'}>
 
-                    <div className={'column price-column package-border-1'} onClick={() => this.setPackage(1)}>
+                    <div className={'column price-column package-option '  + this.getClassNames(1)} onClick={() => this.setPackage(1)}>
 
                         <div className={'package-title-1'}>
                             Trial Package
@@ -72,7 +72,7 @@ class PackageSelect extends Component {
 
                     </div>
 
-                    <div className={'column price-column package-border-2'} onClick={() => this.setPackage(2)}>
+                    <div className={'column price-column package-option '  + this.getClassNames(2)} onClick={() => this.setPackage(2)}>
 
                         <div className={'package-title-2'}>
                             Startup Package
@@ -111,7 +111,7 @@ class PackageSelect extends Component {
 
                     </div>
 
-                    <div className={'column price-column package-border-3'} onClick={() => this.setPackage(3)}>
+                    <div className={'column price-column package-option ' + this.getClassNames(3)} onClick={() => this.setPackage(3)}>
 
                         <div className={'package-title-3'}>
                             Enterprise Package

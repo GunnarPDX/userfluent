@@ -41,7 +41,7 @@ class MainDash extends Component {
     }
 
 
-    renderPosts = () => {
+    renderProjects = () => {
         return this.state.posts.map(post => {
             let props = {
                 post: post
@@ -125,7 +125,7 @@ class MainDash extends Component {
                 <div className={'dash-content-container'}>
                     <UpperDashNav/>
 
-                    {this.renderPosts() }
+                    {this.renderProjects()}
 
 
 

@@ -38,6 +38,8 @@ class About extends Component {
                 <br/>
                 <br/>
 
+                <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1584253145/UserFluent/tech-stack_j3uftb.svg'} alt={'our tech stack'}/>
+
 
                 {/*}
                 <p className={'landing-header-text'} id={'text'}>
