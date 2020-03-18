@@ -4,12 +4,29 @@ import React, {Component} from 'react'
 import ProjectSideNav from "../components/ProjectSideNav";
 import PackageSelect from "../../../../components/forms/packages/PackageSelect";
 import LoadingButton from "../../../../components/loader/LoadingButton";
+import WYSIWYG from "../../../../components/forms/wysiwyg/WYSIWYG";
 
 
 class NewTest extends Component {
 
     state = {
-        loading: 'false'
+        loading: 'false',
+        content: '',
+        package: 0,
+    };
+
+    // Handle a content update for wysiwyg?
+    contentUpdate = (data) => {
+        this.setState({
+            content: data,
+        });
+        //console.log(data);
+    };
+
+    packageUpdate = (option) => {
+        this.setState({
+            package: option
+        });
     };
 
     render() {
@@ -43,10 +60,15 @@ class NewTest extends Component {
                         </div>
 
                         <PackageSelect/>
+                        <br/>
+                        <br/>
+                        <br/>
 
-                        <br/>
-                        <br/>
-                        <br/>
+                        <div className={'form-row-title'}>
+                            Tell Us About What You Are Looking For
+                        </div>
+
+                        <WYSIWYG onUpdate={(data) => {this.contentUpdate(data)}}/>
 
                         <div className={'form-row-title'}>
                             All Done?

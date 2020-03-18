@@ -119,17 +119,28 @@ class NavigationUpper extends Component {
                             <div className={"dropdown-divider"}/>
 
                             <Link to={'/dashboard'} className={"nav-option nav-text"}>
+                                <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1584573074/UserFluent/drop-menu/dash-light_urwetb.svg'} className={'nav-svg'}/>
                                 Dashboard
                             </Link>
 
                             <Link to={'/profile'} className={"nav-option nav-text"}>
-                                <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1578171511/UserFluent/Navbar%20Upper%20Icons/nav-user-light_axu9uj.svg"} className={"nav-svg"} alt={"profile"}/>
+                                <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1584573629/UserFluent/drop-menu/profile-light_omjzyn.svg"} className={"nav-svg"} alt={"profile"}/>
                                 Profile
                             </Link>
 
+                            <Link to={'/billing'} className={"nav-option nav-text"}>
+                                <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1584573074/UserFluent/drop-menu/ballance-light_ut6kvj.svg'} className={'nav-svg'}/>
+                                Billing
+                            </Link>
+
                             <Link to={'/settings'} className={"nav-option nav-text"}>
-                                <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1578171547/UserFluent/Navbar%20Upper%20Icons/nav-settings-light_alnbfz.svg"} className={"nav-svg"} alt={"settings"}/>
+                                <img src={"https://res.cloudinary.com/dmqtrnawm/image/upload/v1584573074/UserFluent/drop-menu/settings-light_my0lp5.svg"} className={"nav-svg"} alt={"settings"}/>
                                 Settings
+                            </Link>
+
+                            <Link to={'/help'} className={"nav-option nav-text"}>
+                                <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1584573074/UserFluent/drop-menu/help-light_histyt.svg'} className={'nav-svg'}/>
+                                Help
                             </Link>
 
                             <div className={"dropdown-divider"}/>

@@ -16,7 +16,6 @@ class PackageSelect extends Component {
         if(option === 1 && this.state.option1) return (' option-selected-1');
         else if (option === 2 && this.state.option2) return (' option-selected-2');
         else if (option === 3 && this.state.option3) return (' option-selected-3');
-        else if (option === 4 && this.state.option4) return (' option-selected');
     };
 
     setPackage = (option) => {
@@ -25,7 +24,6 @@ class PackageSelect extends Component {
             option1: (option === 1),
             option2: (option === 2),
             option3: (option === 3),
-            option4: (option === 4)
         });
     };
 
