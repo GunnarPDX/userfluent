@@ -102,16 +102,18 @@ class NavigationUpper extends Component {
     renderNavControls = () => {
         return (
             <div>
-                <li className={"nav-li"}>
-
-                </li>
 
                 <li className={"nav-li"}>
                     <div className={"uf-dropdown"}>
 
+                        {/*}
                         <Link to={'/dashboard'} className={"dropbtn"}>
                             <img src={this.state.current_user.avatar_small} alt={" "} className={"profile"}/>
                         </Link>
+                        */}
+                        <div className={"nav-li-a"}>
+                            <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1584579237/UserFluent/drop-menu/menu_uuvwhd.svg'} className={'nav-icon'}/>
+                        </div>
 
                         <div className={"uf-dropdown-content"}>
                             <div className={"nav-text"}> Signed in as: {this.state.current_user.username}</div>
@@ -152,6 +154,17 @@ class NavigationUpper extends Component {
                         </div>
 
                     </div>
+                </li>
+
+                <li className={"nav-li"}>
+                    <Link to={'/dashboard'} className={"dropbtn"}>
+                        <img src={this.state.current_user.avatar_small} alt={" "} className={"profile"}/>
+                    </Link>
+                    {/*}
+                    <div className={"nav-li-a"}>
+                        <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1584579237/UserFluent/drop-menu/menu_uuvwhd.svg'} className={'nav-icon'}/>
+                    </div>
+                    */}
                 </li>
 
                 <li className={"nav-li"}>
