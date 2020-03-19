@@ -1,3 +1,16 @@
+@media only screen and (max-width: 768px) {
+  .dash-side-nav {
+    display: none;
+    width: 0;
+  }
+
+  .dash-content-container {
+    margin-left: 0 !important;
+    padding: 10px;
+  }
+
+}
+
 .dash-side-nav {
   position: fixed;
   height: calc(100vh - 40px);
