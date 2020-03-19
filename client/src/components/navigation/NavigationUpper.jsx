@@ -112,7 +112,7 @@ class NavigationUpper extends Component {
                         </Link>
                         */}
                         <div className={"nav-li-a"}>
-                            <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1584579237/UserFluent/drop-menu/menu_uuvwhd.svg'} className={'nav-icon'}/>
+                            <img src={'https://res.cloudinary.com/dmqtrnawm/image/upload/v1584592375/UserFluent/drop-menu/hamburger_iqhruf.svg'} className={'nav-icon'}/>
                         </div>
 
                         <div className={"uf-dropdown-content"}>

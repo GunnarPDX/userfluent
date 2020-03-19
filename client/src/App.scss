@@ -22,6 +22,18 @@ time, mark, audio, video {
 }
 /* RESET END */
 
+@media only screen and (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+}
+
 .App {
   text-align: center;
   font-family: 'Helvetica Neue', sans-serif;

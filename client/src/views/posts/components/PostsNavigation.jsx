@@ -45,7 +45,7 @@ class PostsNavigation extends Component {
                 <nav className={"lower-nav-bar"}>
                     <div className={"level is-mobile nav-height"}>
 
-                        <div className={'lower-nav-right-pad'}/>
+                        <div className={'lower-nav-right-pad hide-on-mobile'}/>
 
                         {/*
                         <div className={"dropdown level-left"}>
@@ -110,7 +110,7 @@ class PostsNavigation extends Component {
                         </div>
                         */}
 
-                        <div className={"level-right"}>
+                        <div className={"level-right hide-on-mobile"}>
 
                             <div className={''}>
                                 <div className="field">
