@@ -3,18 +3,6 @@
 ## About
 UserFluent is a UI/UX testing platform for developers.  Developers can post 
 projects and pay testers to conduct user experience reviews.  
-## LICENSE
-UserFluent™ Incorporated All Rights Reserved.
-
-NOTICE:  All information contained herein this repository is, and remains
-the property of UserFluent™ Incorporated.  The intellectual and technical
-concepts contained herein are proprietary to UserFluent™ Incorporated and
-may be covered by U.S. and Foreign Patents, patents in process, and are
-protected by trade secret or copyright law. Dissemination of this
-information or reproduction of this material is strictly forbidden unless
-prior written permission is obtained from UserFluent™ Incorporated.
-
-Written by C. Gunnar Rosenberg <gunnarrosenberg@gmail.com>, Jan 1st 2020
 ## Specs
 * Ruby version 2.7.0
 * Rails version 5.2.4
@@ -59,8 +47,6 @@ Written by C. Gunnar Rosenberg <gunnarrosenberg@gmail.com>, Jan 1st 2020
 - --> visit your deployed app :)
 
 # To-Dos
-#### Percent completed till launch 
-[10/63] |==========-----------------------------------------------------| %
 ### Removed
 - [x] Old tasks... (removed these to condense this list)
 ### Discover index
@@ -72,89 +58,66 @@ Written by C. Gunnar Rosenberg <gunnarrosenberg@gmail.com>, Jan 1st 2020
 - [x] Finish WYSIWYG styling
 ### 404
 - [ ] Finish 404 page
-### Comments
-- [ ] Add comments!
-- [ ] Add CSS classes
 ### Input Validation
 - [ ] Add input validation to new post form -> ensure all fields are filled
 ### Pricing and Product-Packages
 - [x] Add packages/pricing to form
 - [x] Add Add Ons to form
-- [ ] Add 'public pricing' page
+- [x] Add 'public pricing' page
 ### Write tests
 - [x] Make new post form redirect to post
 - [ ] Make tests for models !!!
 ### Auth Tokens
 - [ ] Make tokens update every API call
 ### Custom Form Builder ?
-- [ ] Create custom form builder for 'new post'
+- [x] Create custom form builder for 'new post'
 - [ ] Create form page for testers that is submittable
-- [ ] Create design crit tools for tester
+- [x] Create design crit tools for tester
 ### New Home Page
-- [ ] Add new home page
-- [ ] Change old root to 'explore'
-- [ ] Create stylish landing
-- [ ] Add new nav to home
+- [x] Add new home page
+- [x] Change old root to 'explore'
+- [x] Create stylish landing
+- [x] Add new nav to home
 ### User Agreements
 - [x] Add 'user agreement' component
-- [ ] Add legal boilerplate for registration and products
-### Account Improvements
-- [ ] Add tester/developer to user accounts
-- [ ] Add ability to follow to user accounts
-- [ ] Add ability to flag content or remove
+- [x] Add legal boilerplate for registration and products
 ### Profile Improvements
-- [ ] Fix styling on user profile pages
-- [ ] Add Bio to user profile
-- [ ] Add user type to profiles
+- [x] Fix styling on user profile pages
+- [x] Add Bio to user profile
 ### User Dashboard
-- [ ] Create tester dashboard
-- [ ] Create developer dashboard
-### Admin Accounts
-- [ ] Add Admin Accounts
-- [ ] Add Add admin dash
-- [ ] Add ability to moderate content
+- [x] Create tester dashboard
+- [x] Create developer dashboard
+### Admin Accounts - in admin frontend
+- [x] Add Admin Accounts
+- [x] Add Add admin dash
+- [x] Add ability to moderate content
 ### Write tests
-- [ ] Make tests for models !!!
+- [x] Make tests for models !!!
 ### Tester Approval
-- [ ] Add tester approval to admin dash
-- [ ] Add product MGMT. dash with additional approval to admin
+- [x] Add tester approval to admin dash
+- [x] Add product MGMT. dash with additional approval to admin
 ### Form Improvements
 - [ ] Fix InputValidation.js regex, refactor, etc...
 - [ ] Add Character limit to text fields
-- [ ] Fix border-radius on bulma dropdowns 4px --> 3px
+- [x] Fix border-radius on bulma dropdowns 4px --> 3px
 ### Nav Improvements
-- [ ] Add separate nav options for testers vs developers
 - [ ] Add alerts functionality
-- [ ] Add search functionality or remove it
+- [x] Add search functionality or remove it
 ### CSS improvements
-- [ ] Convert stuff to flexbox
-- [ ] Change image ratios to better ones
+- [x] Convert stuff to flexbox
+- [x] Change image ratios to better ones
 ### Image hosting
 - [ ] Migrate to imagekit from cloudinary
 - [ ] Add SVG library to frontend app
 ### Add Mailer
 - [ ] Add mailer
-- [ ] Account verification
-### Write tests
-- [ ] Make more tests for models !!!
+- [x] Account verification
 ### Integrate Payments
 - [ ] Stripe payments?
-- [ ] Payment page? devs and users
+- [ ] Payment page?
 - [ ] Account balance on dash
 - [ ] Payment confirmation
 - [ ] Payment Mailer
-- [ ] Handle outgoing payments
-- [ ] integrate taxjar?
-### Write tests
-- [ ] Make tests for models !!!
 ### UX Test results (product not code tests)
 - [ ] Add test result approval to admin
 - [ ] Add test notification when finished
-### Project Review
-- [ ] Review the current state of the project
-- [ ] Create pre-launch improvement plan
-- [ ] Create post-launch improvement plan
-- [ ] Finish pre-launch improvements
-- [ ] Launch!
-- [ ] Find clients
-- [ ] ...
